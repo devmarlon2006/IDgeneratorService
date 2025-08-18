@@ -15,15 +15,15 @@ public class Build {
 
             List <String> idcom = new ArrayList<>();
 
-            idcom.add( IdByName.ByName( Username ) ); // Bloco 1
+            idcom.add( IdByName.ByName( Username ).orElse( "" ) ); // Bloco 1
 
-            idcom.add(IdByAge.ByAge(Age)); // Bloco 2
+            idcom.add(IdByAge.ByAge(Age).orElse( "" )); // Bloco 2
 
-            idcom.add(IdByState.ByState( State )); // Bloco 3
+            idcom.add(IdByState.ByState( State ).orElse( "" )); // Bloco 3
 
-            idcom.add(IdByCountry.ByCountry( Country )); // Bloco 4
+            idcom.add(IdByCountry.ByCountry( Country ).orElse( "" )); // Bloco 4
 
-            idcom.add( IdByALL.ByALL(Username,State,Country,Age)); // Bloco 5
+            idcom.add( IdByALL.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
 
 
             return String.join("", idcom);
