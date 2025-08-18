@@ -1,11 +1,18 @@
 package com.devmarlon2006.IDgeneratorService.Services.ElementsLogic;
 
+import com.devmarlon2006.IDgeneratorService.Services.IdBy.NullVery;
+
 import java.util.Random;
 
 public class randomElements {
 
     //By Name
     public static char  elementRandom(String name){
+
+        if (name == null){
+            return 'E';
+        }
+
         Random random0 = new Random();
 
         int randomIndex = random0.nextInt(name.length());
@@ -16,6 +23,7 @@ public class randomElements {
 
 
     static int elementRa1(){
+
         Random random1 = new Random();
 
         return random1.nextInt(9);
@@ -27,7 +35,11 @@ public class randomElements {
         return random2.nextInt(9);
     }
 
-    public static String element2Con(int number){
+    public static String element2Con(int number, String name){
+
+        if (number < 0 || name == null){
+            return "R";
+        }
 
 
         int result;
@@ -49,7 +61,7 @@ public class randomElements {
     public static String elementRandom3(String username){
 
         if (username == null){
-            return "0";
+            return "O";
         }
 
         int name = username.length() ;
@@ -64,6 +76,10 @@ public class randomElements {
 
     //By Age
     public static String elementRandom4(int age){
+
+        if (age < 0){
+            return "7";
+        }
 
         Random random5 =  new Random();
         
@@ -84,6 +100,10 @@ public class randomElements {
     }
 
     public static String elementRandom5(int age){
+
+        if (age < 0){
+            return "7";
+        }
 
         Random random = new Random();
         double res;
@@ -107,7 +127,12 @@ public class randomElements {
 
     }
 
-    public static Character elementRandom7() {
+    public static Character elementRandom7(int age) {
+
+        if (age < 0){
+            return '0';
+        }
+
         Random random = new Random();
         String character;
         char result;
@@ -120,10 +145,19 @@ public class randomElements {
 
     //By State
     public static Character elementRandom8(String State, int index){
+
+        if (State == null){
+            return 'E';
+        }
+
         return State.toUpperCase().charAt( index );
     }
 
     public static String elementRandom9(String State){
+
+        if (State == null){
+            return "0";
+        }
 
         Random random = new Random();
         int at;
@@ -140,11 +174,19 @@ public class randomElements {
     }
 
     public static Character elementRandom10(String State){
+
+        if (State == null){
+            return 'E';
+        }
+
         return Integer.toString( State.length() -1 ).charAt( 0 );
     }
 
     //By Country
     public static String elementRandom11(String country){
+        if (country == null){
+            return "0";
+        }
 
         String result = country.toUpperCase();
         char result2 = result.charAt( 0 );
@@ -154,6 +196,11 @@ public class randomElements {
 
 
     public static String elementRadom12(String country){
+
+        if (country == null){
+            return "0";
+        }
+
         int ele = country.length() % 10;
         char el2 =  Integer.toString( ele ).charAt( 0 );
 
@@ -163,6 +210,10 @@ public class randomElements {
 
 
     public static Character elementRadom13(String country){
+
+        if (country == null){
+            return 'E';
+        }
 
         int ele = country.length();
         int ele4;
@@ -202,6 +253,11 @@ public class randomElements {
     }
 
     public static Character elementRadom16(Integer age){
+
+        if (age == null){
+            return  'N';
+        }
+
         int result = age % 10;
         return Integer.toString( result ).charAt( 0 );
 
@@ -209,12 +265,22 @@ public class randomElements {
 
     public static Character elementRadom17(String state){
 
+
+        if (state == null){
+            return 'E';
+        }
+
         int srt = state.length() * state.length() % 10;
 
         return Integer.toString( srt ).charAt( 0 );
     }
 
     public static Character elementRadom18(String country){
+
+        if (country == null){
+            return 'R';
+        }
+
         return country.charAt( country.length() - 1 );
     }
 

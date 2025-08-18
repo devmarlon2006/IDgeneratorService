@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
+@Setter
 public class InfoClassElements {
 
     private final String name;
@@ -14,9 +15,9 @@ public class InfoClassElements {
     private final String stateBornCountry;
     private String ID;
 
-    public void setID(String ID){
-        this.ID = (ID != null) ? ID : "Erro no ID";
-    }
+   public void setID(String ID){
+        this.ID = (ID != null) ? ID : "";
+   }
 
     public InfoClassElements(int age, String name, String bornCountry, String stateBornCountry, String ID) {
         this.age = age;
