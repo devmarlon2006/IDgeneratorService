@@ -6,15 +6,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-@Setter
 public class InfoClassElements {
 
-    private String name;
-    private int age;
-    private String bornCountry;
-    private String stateBornCountry;
+    private final String name;
+    private final int age;
+    private final String bornCountry;
+    private final String stateBornCountry;
     private String ID;
 
+    public void setID(String ID){
+        this.ID = (ID != null) ? ID : "Erro no ID";
+    }
+
+    public InfoClassElements(int age, String name, String bornCountry, String stateBornCountry, String ID) {
+        this.age = age;
+        this.name = name;
+        this.bornCountry = bornCountry;
+        this.stateBornCountry = stateBornCountry;
+        this.ID = ID;
+    }
 
     @Override
     public String toString() {

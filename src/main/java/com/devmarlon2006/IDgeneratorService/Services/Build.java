@@ -8,19 +8,29 @@ public class Build {
 
     public static String idNameBild(String Username, String State, String Country, int Age){
 
-        List <String> idcom = new ArrayList<>();
-       idcom.add( IdByName.ByName( Username ) ); // Bloco 1
 
-       idcom.add(IdByAge.ByAge(Age)); // Bloco 2
+        if (Username == null){
+            return null;
+        }else {
 
-       idcom.add(IdByState.ByState( State )); // Bloco 3
+            List <String> idcom = new ArrayList<>();
 
-       idcom.add(IdByCountry.ByCountry( Country )); // Bloco 4
+            idcom.add( IdByName.ByName( Username ) ); // Bloco 1
 
-        idcom.add( IdByALL.ByALL(Username,State,Country,Age)); // Bloco 5
+            idcom.add(IdByAge.ByAge(Age)); // Bloco 2
+
+            idcom.add(IdByState.ByState( State )); // Bloco 3
+
+            idcom.add(IdByCountry.ByCountry( Country )); // Bloco 4
+
+            idcom.add( IdByALL.ByALL(Username,State,Country,Age)); // Bloco 5
 
 
-        return String.join("", idcom);
+            return String.join("", idcom);
+
+        }
+
+
 
 
     }
