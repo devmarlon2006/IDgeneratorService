@@ -1,6 +1,8 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroExepition;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.devmarlon2006.IDgeneratorService.Services.IDelemntAllowed;
 
 import java.util.Optional;
@@ -18,8 +20,8 @@ public class IdByName {
             isNumber = false;
         }
 
-        if (isNumber){
-            return Optional.of("ERRO_NAME");
+        if(isNumber){
+            throw new ErroExepition( Erros.NAME_ERRO );
         }
 
         return (IDelemntAllowed.AllowedCharacter(Name_B1).toString()
