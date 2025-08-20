@@ -9,7 +9,7 @@ public class IDelemntAllowed {
 
         String allowedCharacters;
 
-        char idchar1 = IDElement1.charAt( 0 );
+        char idchar1 = IDElement1.toUpperCase().charAt( 0 );
 
         idchar1 = switch (idchar1) {
             case 'A' -> {

@@ -1,5 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 // POJO -> Plain Old Java Object
@@ -26,7 +27,9 @@ public class InfoClassElements {
         this.ID = ID;
     }
 
+
     @Override
+    @JsonIgnore
     public String toString() {
         return "InfoClassElements{" +
                 "ID='" + ID + '\'' +
@@ -38,58 +41,72 @@ public class InfoClassElements {
     }
 
 
+    @JsonIgnore
     public boolean isNull(){
         return this.ID == null;
     }
 
+    @JsonIgnore
     public boolean isNotNull(){
         return !isNull();
     }
 
+    @JsonIgnore
     public boolean isIDNull(){
        return this.ID.isEmpty();
     }
 
+    @JsonIgnore
     public boolean isIDNotNull(){
        return !isIDNull();
     }
 
+    @JsonIgnore
     public boolean isNameNull(){
        return this.name.isEmpty();
     }
 
+    @JsonIgnore
     public boolean isNameNotNull(){
        return !isNameNull();
     }
 
+    @JsonIgnore
     public boolean isAgeNull(){
        return this.age <= 0;
     }
 
+    @JsonIgnore
     public boolean isAgeNotNull(){
        return !isAgeNull();
     }
 
+    @JsonIgnore
     public boolean isBornCountryNull(){
        return this.bornCountry.isEmpty();
     }
 
+    @JsonIgnore
     public boolean isBornCountryNotNull(){
        return !isBornCountryNull();
     }
 
+    @JsonIgnore
     public boolean isStateBornCountryNull(){
        return this.stateBornCountry.isEmpty();
     }
 
+    @JsonIgnore
     public boolean isStateBornCountryNotNull(){
        return !isStateBornCountryNull();
     }
 
+    @JsonIgnore
     public boolean isAllNull(){
        return isIDNull() && isNameNull() && isAgeNull() && isBornCountryNull() && isStateBornCountryNull();
     }
 
+    @JsonIgnore
     public boolean isAllNotNull(){
        return !isAllNull();
     }

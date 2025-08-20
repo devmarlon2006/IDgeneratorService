@@ -15,9 +15,9 @@ public class IdByAge {
         try{
 
             Integer.parseInt( Integer.toString( Age_B2 ) );
-            Valid = true;
-        }catch (NumberFormatException e){
             Valid = false;
+        }catch (NumberFormatException e){
+            Valid = true;
         }
 
         if (Valid){
