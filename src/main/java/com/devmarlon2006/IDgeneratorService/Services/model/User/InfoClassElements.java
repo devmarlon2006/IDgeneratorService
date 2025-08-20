@@ -1,12 +1,11 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
+import lombok.Getter;
+
 // POJO -> Plain Old Java Object
 
-import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 public class InfoClassElements {
 
     private final String name;
@@ -37,6 +36,64 @@ public class InfoClassElements {
                 ", stateBornCountry='" + stateBornCountry + '\'' +
                 '}';
     }
+
+
+    public boolean isNull(){
+        return this.ID == null;
+    }
+
+    public boolean isNotNull(){
+        return !isNull();
+    }
+
+    public boolean isIDNull(){
+       return this.ID.isEmpty();
+    }
+
+    public boolean isIDNotNull(){
+       return !isIDNull();
+    }
+
+    public boolean isNameNull(){
+       return this.name.isEmpty();
+    }
+
+    public boolean isNameNotNull(){
+       return !isNameNull();
+    }
+
+    public boolean isAgeNull(){
+       return this.age <= 0;
+    }
+
+    public boolean isAgeNotNull(){
+       return !isAgeNull();
+    }
+
+    public boolean isBornCountryNull(){
+       return this.bornCountry.isEmpty();
+    }
+
+    public boolean isBornCountryNotNull(){
+       return !isBornCountryNull();
+    }
+
+    public boolean isStateBornCountryNull(){
+       return this.stateBornCountry.isEmpty();
+    }
+
+    public boolean isStateBornCountryNotNull(){
+       return !isStateBornCountryNull();
+    }
+
+    public boolean isAllNull(){
+       return isIDNull() && isNameNull() && isAgeNull() && isBornCountryNull() && isStateBornCountryNull();
+    }
+
+    public boolean isAllNotNull(){
+       return !isAllNull();
+    }
+
 }
 
 
