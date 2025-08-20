@@ -2,18 +2,16 @@ package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 
 public enum Erros {
 
-    LIST_ERRO(1001, "Erro ao listar os dados"),
-    ID_ERRO(1002, "Erro ao gerar o ID"),
-    NAME_ERRO(1003, "Nome Invalido"),
-    AGE_ERRO(1004, "Idade Invalida"),
-    COUNTRY_ERRO(1005, "Pais Invalido"),
-    STATE_ERRO(1006, "Estado Invalido"),
+    LIST_ERRO(1001, "LIST_ERRO"),
+    ID_ERRO(1002, "ERRO_ID"),
+    NAME_ERRO(1003, "ERRO_NAME"),
+    AGE_ERRO(1004, "ERRO_AGE"),
+    COUNTRY_ERRO(1005, "ERRO_COUNTRY"),
+    STATE_ERRO(1006, "ERRO_STATE"),
+    ALL_ERRO(1007, "USER_ERRO");
 
-    ALL_ERRO(1007, "Erro Em Todas as informações")
-    ;
-
-    private int CODIGO;
-    private String MENSAGEM;
+    private final int CODIGO;
+    private final String MENSAGEM;
 
     Erros(int CODIGO, String MENSAGEM){
         this.CODIGO = CODIGO;
@@ -26,5 +24,9 @@ public enum Erros {
 
     public String getMENSAGEM(){
         return this.MENSAGEM;
+    }
+
+    public String formatErro(int Code, String Message){
+        return "ID_ERRO:" + Code + " ERRO_MESSAGE:" + Message;
     }
 }

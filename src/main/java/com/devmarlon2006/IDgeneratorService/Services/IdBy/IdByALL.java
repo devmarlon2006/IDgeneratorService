@@ -1,7 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroExepition;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
@@ -12,6 +11,8 @@ public class IdByALL {
 
         boolean Valid;
         boolean valid2;
+
+        Erros textErro =  Erros.ALL_ERRO;
 
         try {
             Integer.parseInt( Integer.toString( Age_B5) );
@@ -33,7 +34,7 @@ public class IdByALL {
         }
 
         if (Valid || valid2){
-            throw new ErroExepition( Erros.ALL_ERRO );
+            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM() ).describeConstable();
         }
 
         return (randomElements.elementRadom15( Username_B5 )

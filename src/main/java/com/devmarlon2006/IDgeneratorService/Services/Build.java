@@ -25,6 +25,15 @@ public class Build {
         idcom.add( IdByALL.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
 
 
+        if(idcom.getFirst().contains("ID_ERRO")){
+
+            idcom.clear();
+
+            idcom.add("LIST_ERRO");
+            return String.join("", idcom);
+        }
+
+
         return String.join("", idcom);
 
 

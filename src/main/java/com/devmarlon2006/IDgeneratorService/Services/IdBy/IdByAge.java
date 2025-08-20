@@ -1,7 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroExepition;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
@@ -11,6 +10,7 @@ public class IdByAge {
     public static Optional <String> ByAge(int Age_B2){
 
         boolean Valid;
+        Erros textErro =  Erros.AGE_ERRO;
 
         try{
 
@@ -21,7 +21,7 @@ public class IdByAge {
         }
 
         if (Valid){
-            throw new ErroExepition( Erros.AGE_ERRO );
+            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
 
