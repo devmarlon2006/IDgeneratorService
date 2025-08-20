@@ -14,7 +14,7 @@ public class CreationController{
     @PostMapping("/CreateUserID")
     public InfoClassElements controllerIDCreation(@RequestBody InfoClassElements User){
 
-        User.setID( Build.idNameBild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
+        User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
         return User;
 
     }

@@ -1,5 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 

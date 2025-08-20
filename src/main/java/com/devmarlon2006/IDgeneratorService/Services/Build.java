@@ -6,7 +6,9 @@ import java.util.*;
 
 public class Build {
 
-    public static String idNameBild(String Username, String State, String Country, int Age){
+    public static String idNameBuild(String Username, String State, String Country, int Age){
+
+
 
         if (Username == null){
            return "LIST_ERRO_NULL_VALUE";
@@ -24,23 +26,23 @@ public class Build {
 
         idcom.add( IdByALL.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
 
+        for (int i = 0; i < idcom.size(); i++) {
 
-        if(idcom.getFirst().contains("ID_ERRO")){
+            String[] list = {"Username", "Age", "State", "Country", "All"};
 
-            idcom.clear();
+            if (idcom.get( i ).contains( "ID_ERRO" )) {
+                idcom.clear();
+                idcom.add( "LIST_ERRO_INCORRECT_VALUE("+ list[i] + ")" );
+                return String.join( "", idcom );
+            }
 
-            idcom.add("LIST_ERRO_INCORRECT_VALUE");
-            return String.join("", idcom);
         }
+
 
 
         return String.join("", idcom);
 
-
-
-
     }
-
 
 }
 
