@@ -9,7 +9,7 @@ public class Build {
     public static String idNameBild(String Username, String State, String Country, int Age){
 
         if (Username == null){
-           return "LIST_ERRO";
+           return "LIST_ERRO_NULL_VALUE";
         }
 
         List <String> idcom = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Build {
 
             idcom.clear();
 
-            idcom.add("LIST_ERRO");
+            idcom.add("LIST_ERRO_INCORRECT_VALUE");
             return String.join("", idcom);
         }
 
