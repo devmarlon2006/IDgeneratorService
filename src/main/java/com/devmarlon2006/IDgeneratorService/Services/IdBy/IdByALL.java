@@ -33,13 +33,13 @@ public class IdByALL {
             Integer.parseInt( State_B5 );
             Integer.parseInt( Username_B5 );
 
-            Valid = true;
+            Valid = false;
 
         }catch (NumberFormatException e){
-            Valid = false;
+            Valid = true;
         }
 
-        if (Valid || valid2){
+        if (Valid && valid2){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM() ).describeConstable();
         }
 

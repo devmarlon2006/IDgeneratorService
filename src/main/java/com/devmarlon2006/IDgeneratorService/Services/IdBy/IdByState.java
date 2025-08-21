@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
@@ -16,21 +17,13 @@ public class IdByState {
 
     public static Optional<String> ByState(String State_3){
 
-        boolean VALID;
         Erros textErro =  Erros.STATE_ERRO;
 
-        try {
-            Integer.parseInt(State_3);
-            VALID = true;
-        }catch (NumberFormatException e){
-            VALID = false;
-        }
-
-        if(State_3.length() < 2|| State_3.length() > 50){
+        if(ErroMethods.Method1(State_3)){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
-        if (VALID){
+        if (ErroMethods.Method2(State_3)){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 

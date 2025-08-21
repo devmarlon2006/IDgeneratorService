@@ -15,6 +15,9 @@ public class CreationController{
     public InfoClassElements controllerIDCreation(@RequestBody InfoClassElements User){
 
         User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
+
+        System.out.println(User.getID() + "\n");
+
         return User;
 
     }

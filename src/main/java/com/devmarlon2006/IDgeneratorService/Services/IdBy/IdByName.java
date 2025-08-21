@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.devmarlon2006.IDgeneratorService.Services.IDelemntAllowed;
 
@@ -14,21 +15,13 @@ public class IdByName {
 
     public static Optional<String> ByName(String Name_B1){
 
-        boolean isNumber;
         Erros textErro =  Erros.NAME_ERRO;
 
-        try {
-            Integer.parseInt(Name_B1);
-            isNumber =  true;
-        }catch (NumberFormatException e){
-            isNumber = false;
-        }
-
-        if(Name_B1.length() < 3|| Name_B1.length() > 100){
+        if(ErroMethods.Method1( Name_B1 )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
-        if(isNumber){
+        if(ErroMethods.Method2( Name_B1 )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 

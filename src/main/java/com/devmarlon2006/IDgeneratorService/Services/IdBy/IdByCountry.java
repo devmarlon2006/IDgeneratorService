@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
@@ -17,21 +18,13 @@ public class IdByCountry {
 
     public static Optional<String> ByCountry(String Country){
 
-        boolean Valid;
         Erros textErro =  Erros.COUNTRY_ERRO;
 
-        try {
-            Integer.parseInt(Country);
-            Valid = true;
-        }catch (NumberFormatException e){
-            Valid = false;
-        }
-
-        if(Country.length() < 2|| Country.length() > 50){
+        if(ErroMethods.Method1( Country )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
-        if (Valid){
+        if (ErroMethods.Method2( Country )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
