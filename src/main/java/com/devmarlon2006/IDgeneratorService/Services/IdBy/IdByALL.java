@@ -7,6 +7,12 @@ import java.util.Optional;
 
 public class IdByALL {
 
+    /*
+    Metodo Instavel
+    Causa: Caso receba um dado que contenha um némeros ele não retornara o erro esperado,
+    gerando assim um ID invalido.
+     */
+
     public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, int Age_B5){
 
         boolean Valid;

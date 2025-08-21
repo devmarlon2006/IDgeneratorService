@@ -8,6 +8,10 @@ import java.util.Optional;
 
 public class IdByName {
 
+    /*
+    Metodo Estavel :)
+     */
+
     public static Optional<String> ByName(String Name_B1){
 
         boolean isNumber;
@@ -18,6 +22,10 @@ public class IdByName {
             isNumber =  true;
         }catch (NumberFormatException e){
             isNumber = false;
+        }
+
+        if(Name_B1.length() < 3|| Name_B1.length() > 100){
+            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
         if(isNumber){

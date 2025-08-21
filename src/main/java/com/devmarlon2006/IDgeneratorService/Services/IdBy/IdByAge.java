@@ -5,7 +5,14 @@ import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
 
+
+
 public class IdByAge {
+
+
+    /*
+    Metodo Instavel :(
+    */
 
     public static Optional <String> ByAge(int Age_B2){
 
@@ -18,6 +25,10 @@ public class IdByAge {
             Valid = false;
         }catch (NumberFormatException e){
             Valid = true;
+        }
+
+        if(Age_B2 > 125){
+            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
         if (Valid){
