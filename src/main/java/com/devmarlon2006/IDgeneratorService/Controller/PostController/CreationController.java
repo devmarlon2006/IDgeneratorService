@@ -16,7 +16,7 @@ public class CreationController{
 
         User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
 
-        System.out.println(User.getID() + "\n");
+        System.out.println("Username:" + User.getName() + " ID_created:" + User.getID() + "\n");
 
         return User;
 

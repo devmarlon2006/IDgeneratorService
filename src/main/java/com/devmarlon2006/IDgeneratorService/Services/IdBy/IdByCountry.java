@@ -11,20 +11,14 @@ import java.util.Optional;
 public class IdByCountry {
 
     /*
-    Metodo Instavel
-    Causa: Caso receba um dado que contenha um némeros ele não retornara o erro esperado,
-    gerando assim um ID invalido.
+    Status: Funcionando
     */
 
     public static Optional<String> ByCountry(String Country){
 
         Erros textErro =  Erros.COUNTRY_ERRO;
 
-        if(ErroMethods.Method1( Country )){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
-        }
-
-        if (ErroMethods.Method2( Country )){
+        if(ErroMethods.Method1( Country ) || ErroMethods.Method2( Country ) || ErroMethods.Method3( Country )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 

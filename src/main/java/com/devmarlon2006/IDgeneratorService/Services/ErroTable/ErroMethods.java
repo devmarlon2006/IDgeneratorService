@@ -16,4 +16,8 @@ public class ErroMethods {
         return false;
 
     }
+
+    public static boolean Method3(String name){
+        return !name.matches("[a-zA-Z0-9]+");
+    }
 }

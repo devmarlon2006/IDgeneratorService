@@ -10,18 +10,14 @@ import java.util.Optional;
 public class IdByName {
 
     /*
-    Metodo Estavel :)
+    Status: Funcionando
      */
 
     public static Optional<String> ByName(String Name_B1){
 
         Erros textErro =  Erros.NAME_ERRO;
 
-        if(ErroMethods.Method1( Name_B1 )){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
-        }
-
-        if(ErroMethods.Method2( Name_B1 )){
+        if(ErroMethods.Method1( Name_B1 ) || ErroMethods.Method2( Name_B1 ) || ErroMethods.Method3( Name_B1 )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 

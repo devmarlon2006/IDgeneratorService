@@ -2,6 +2,14 @@ package com.devmarlon2006.IDgeneratorService.Services.ElementsLogic;
 
 import java.util.Random;
 
+
+
+/*
+Lógica da geração do ID.
+Para modificação de qualquer elemento basta alterar o método que está associado ao caracter do ID.
+Atenção⚠️ - Alguns métodos estão associados a mais de um caracter.
+ */
+
 public class randomElements {
 
     //By Name

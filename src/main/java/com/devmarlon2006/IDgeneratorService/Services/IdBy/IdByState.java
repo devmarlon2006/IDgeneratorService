@@ -10,20 +10,14 @@ import java.util.Optional;
 public class IdByState {
 
     /*
-    Metodo Instavel
-    Causa: Caso receba um dado que contenha um némeros ele não retornara o erro esperado,
-    gerando assim um ID invalido.
+    Status: Funcionando
     */
 
     public static Optional<String> ByState(String State_3){
 
         Erros textErro =  Erros.STATE_ERRO;
 
-        if(ErroMethods.Method1(State_3)){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
-        }
-
-        if (ErroMethods.Method2(State_3)){
+        if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
