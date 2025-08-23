@@ -17,7 +17,7 @@ public class IdByState {
 
         Erros textErro =  Erros.STATE_ERRO;
 
-        if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 )){
+        if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 ) || ErroMethods.Method4( State_3 )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 

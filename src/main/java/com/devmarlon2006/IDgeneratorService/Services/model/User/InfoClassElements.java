@@ -30,6 +30,25 @@ public class InfoClassElements {
         return name;
    }
 
+   public String getStateBornCountry(){
+       Erros erro = Erros.STATE_ERRO;
+
+       if (stateBornCountry == null || stateBornCountry.isEmpty()){
+           return erro.formatErro( erro.getCODIGO(), erro.getMENSAGEM() );
+       }
+
+       return stateBornCountry;
+   }
+
+   public String getBornCountry(){
+       Erros erro = Erros.COUNTRY_ERRO;
+
+       if (bornCountry == null || bornCountry.isEmpty()){
+           return erro.formatErro( erro.getCODIGO(), erro.getMENSAGEM() );
+       }
+       return bornCountry;
+   }
+
 
 
 
