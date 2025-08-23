@@ -27,7 +27,6 @@ public class randomElements {
         return name.charAt(randomIndex);
     }
 
-
     static int elementRa1(){
 
         Random random1 = new Random();
@@ -62,7 +61,6 @@ public class randomElements {
         return Integer.toString( result );
 
     }
-
 
     public static String elementRandom3(String username){
 
@@ -213,8 +211,6 @@ public class randomElements {
         return Character.toString( el2 );
     }
 
-
-
     public static Character elementRadom13(String country){
 
         if (country == null){
@@ -235,7 +231,6 @@ public class randomElements {
         }
 
     }
-
 
     public static Character elementRadom14(String country){
 
@@ -289,7 +284,5 @@ public class randomElements {
 
         return country.charAt( country.length() - 1 );
     }
-
-
 
 }

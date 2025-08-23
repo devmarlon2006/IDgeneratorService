@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
@@ -8,39 +9,15 @@ import java.util.Optional;
 public class IdByALL {
 
     /*
-    Metodo Instavel
-    Causa: Caso receba um dado que contenha um némeros ele não retornara o erro esperado,
-    gerando assim um ID invalido.
+    Metodo Estavel
      */
 
     public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, int Age_B5){
 
-        boolean Valid;
-        boolean valid2;
-
         Erros textErro =  Erros.ALL_ERRO;
 
-        try {
-            Integer.parseInt( Integer.toString( Age_B5) );
-            valid2 = false;
-        }catch (NumberFormatException e){
-            valid2 = true;
-        }
-
-        try{
-
-            Integer.parseInt( Country_B5 );
-            Integer.parseInt( State_B5 );
-            Integer.parseInt( Username_B5 );
-
-            Valid = false;
-
-        }catch (NumberFormatException e){
-            Valid = true;
-        }
-
-        if (Valid && valid2){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM() ).describeConstable();
+        if (ErroMethods.Method5( Age_B5) || ErroMethods.Method4( Username_B5 ) || ErroMethods.Method4( State_B5 ) || ErroMethods.Method4( Country_B5)){
+            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
         return (randomElements.elementRadom15( Username_B5 )

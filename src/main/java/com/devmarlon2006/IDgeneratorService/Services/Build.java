@@ -40,12 +40,8 @@ public class Build {
 
         }
 
-
-
         return String.join("", idcom);
-
     }
-
 }
 
 

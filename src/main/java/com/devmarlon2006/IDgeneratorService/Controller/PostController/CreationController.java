@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/create")
 public class CreationController{
 
-
     @PostMapping("/CreateUserID")
     public InfoClassElements controllerIDCreation(@RequestBody InfoClassElements User){
 

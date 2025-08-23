@@ -6,7 +6,6 @@ public class IDelemntAllowed {
 
     public static Character AllowedCharacter(String IDElement1) {
 
-
         String allowedCharacters;
 
         char idchar1 = IDElement1.toUpperCase().charAt( 0 );

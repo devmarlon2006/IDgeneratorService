@@ -47,8 +47,4 @@ public class IdByAge {
                                 + randomElements.elementRandom7(Age_B2)).describeConstable();
 
         }
-
-
-
     }
-

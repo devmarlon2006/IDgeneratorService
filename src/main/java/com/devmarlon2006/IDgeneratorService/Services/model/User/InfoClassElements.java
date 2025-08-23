@@ -49,9 +49,6 @@ public class InfoClassElements {
        return bornCountry;
    }
 
-
-
-
     public InfoClassElements(int age, String name, String bornCountry, String stateBornCountry, String ID) {
         this.age = age;
         this.name = name;

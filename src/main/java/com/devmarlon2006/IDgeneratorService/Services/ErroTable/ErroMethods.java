@@ -24,11 +24,13 @@ public class ErroMethods {
         return !name.matches( "[a-zA-Z0-9 ]+");
     }
 
+    // Para elementos que voltaram um erro.
     public static boolean Method4(String name){
         return name.equals("ERRO");
     }
 
+    // Para limites de idade.
     public static boolean Method5(int Parameter){
-        return Parameter <= 0 || Parameter > 100;
+        return Parameter <= 0 || Parameter > 125;
     }
 }
