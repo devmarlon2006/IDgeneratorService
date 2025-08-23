@@ -1,5 +1,8 @@
 package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 
+import lombok.Getter;
+
+@Getter
 public enum Erros {
 
     LIST_ERRO(1001, "LIST_ERRO"),
@@ -17,14 +20,6 @@ public enum Erros {
     Erros(int CODIGO, String MENSAGEM){
         this.CODIGO = CODIGO;
         this.MENSAGEM = MENSAGEM;
-    }
-
-    public int getCODIGO(){
-        return this.CODIGO;
-    }
-
-    public String getMENSAGEM(){
-        return this.MENSAGEM;
     }
 
     public String formatErro(int Code, String Message){

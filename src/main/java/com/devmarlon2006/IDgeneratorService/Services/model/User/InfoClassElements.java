@@ -19,6 +19,20 @@ public class InfoClassElements {
         this.ID = (ID != null) ? ID : "";
    }
 
+
+   public String getName(){
+       Erros erro = Erros.NAME_ERRO;
+
+       if (name == null || name.isEmpty()){
+           return erro.formatErro( erro.getCODIGO(), erro.getMENSAGEM() );
+       }
+
+        return name;
+   }
+
+
+
+
     public InfoClassElements(int age, String name, String bornCountry, String stateBornCountry, String ID) {
         this.age = age;
         this.name = name;
