@@ -16,7 +16,15 @@ public class CreationController{
 
         User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
 
+        //Apenas para testes !!
+        if(User.isIDNotNull()){
+            System.out.println("Crated ✓");
+        }else{
+            System.out.println("Erro");
+        }
+
         System.out.println("Username:" + User.getName() + " ID_created:" + User.getID() + "\n");
+        //Teste Î
 
         return User;
 

@@ -8,7 +8,8 @@ public enum Erros {
     AGE_ERRO(1004, "ERRO_AGE"),
     COUNTRY_ERRO(1005, "ERRO_COUNTRY"),
     STATE_ERRO(1006, "ERRO_STATE"),
-    ALL_ERRO(1007, "USER_ERRO");
+    ALL_ERRO(1007, "USER_ERRO"),
+    NOT_FOUND(1008,"NOT_FOUND_ID");
 
     private final int CODIGO;
     private final String MENSAGEM;
