@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import java.util.Optional;
@@ -27,7 +28,11 @@ public class IdByAge {
             Valid = true;
         }
 
-        if(Age_B2 > 125){
+        if (Age_B2 < 0 || Age_B2 > 125){
+            Age_B2 = 0;
+        }
+
+        if(ErroMethods.Method5( Age_B2 )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
@@ -36,7 +41,7 @@ public class IdByAge {
         }
 
 
-            return (randomElements.elementRandom4( Age_B2 ).toString().charAt( 0 )
+            return (randomElements.elementRandom4( Age_B2 ).charAt( 0 )
                                 + randomElements.elementRandom5( Age_B2 )
                                 + randomElements.elementRandom6( Age_B2 ).toString().charAt( 0 )
                                 + randomElements.elementRandom7(Age_B2)).describeConstable();

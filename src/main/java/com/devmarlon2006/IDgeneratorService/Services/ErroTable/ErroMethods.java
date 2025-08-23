@@ -27,4 +27,8 @@ public class ErroMethods {
     public static boolean Method4(String name){
         return name.equals("ERRO");
     }
+
+    public static boolean Method5(int Parameter){
+        return Parameter <= 0 || Parameter > 100;
+    }
 }
