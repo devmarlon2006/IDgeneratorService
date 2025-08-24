@@ -18,7 +18,7 @@ public class CreationController{
 
         User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
 
-        return ResponseEntity.status( HttpStatus.CREATED).body("Recurso criado com sucesso!");
+        return ResponseEntity.status( HttpStatus.CREATED).body("Usuário criado com sucesso!");
 
     }
 

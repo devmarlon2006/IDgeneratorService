@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
         ex.getBindingResult().getAllErrors().forEach( error -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
-
+            assert errorMessage != null;
             String errorCode = mapErrorMessageToCode( errorMessage );
 
             errorDetails.add(new ErrorDetail(errorCode, fieldName, errorMessage));
@@ -63,6 +63,18 @@ public class GlobalExceptionHandler {
 
         if (errorMessage.contains( "Country" )) {
             return Erros.COUNTRY_ERRO.getMENSAGEM();
+        }
+
+        if (errorMessage.contains( "E-mail" )) {
+            return Erros.EMAIL_ERRO.getMENSAGEM();
+        }
+
+        if (errorMessage.contains( "All" )) {
+            return Erros.ALL_ERRO.getMENSAGEM();
+        }
+
+        if (errorMessage.contains( "Password" )) {
+            return Erros.PASSWORD_ERRO.getMENSAGEM();
         }
         return "0"; // Código de erro genérico
 
