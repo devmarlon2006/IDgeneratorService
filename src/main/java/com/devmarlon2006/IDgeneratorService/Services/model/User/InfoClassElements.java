@@ -11,20 +11,20 @@ import lombok.Getter;
 @Getter
 public class InfoClassElements {
 
-    @NotBlank(message = "O nome é obrigatório.")
+    @NotBlank(message = "O nome é obrigatório - (Username)")
     @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres.")
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O nome não pode conter números ou caracteres especiais.")
     private final String name;
 
-    @NotBlank(message = "A idade e Obrigatória" )
+    @NotBlank(message = "A idade e Obrigatória - (Age)" )
     @Size(min = 1, max = 3, message = "A idade deve ter entre 1 e 10 caracteres.")
     private final String age;
 
-    @NotBlank(message = "Campo obrigatório")
+    @NotBlank(message = "Campo obrigatório - (Country)")
     @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres.")
     private final String bornCountry;
 
-    @NotBlank(message = "Campo obrigatório")
+    @NotBlank(message = "Campo obrigatório - (State)")
     @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres.")
     private final String stateBornCountry;
 

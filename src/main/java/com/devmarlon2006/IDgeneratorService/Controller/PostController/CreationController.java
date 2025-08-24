@@ -1,7 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Controller.PostController;
 
 import com.devmarlon2006.IDgeneratorService.Services.Build;
-import com.devmarlon2006.IDgeneratorService.Services.GlobalExceptionHandler;
 import com.devmarlon2006.IDgeneratorService.Services.model.User.InfoClassElements;
 
 import jakarta.validation.Valid;
