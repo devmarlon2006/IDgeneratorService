@@ -2,6 +2,9 @@ package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 
 // POJO -> Plain Old Java Object
@@ -9,10 +12,23 @@ import lombok.Getter;
 @Getter
 public class InfoClassElements {
 
+    @NotBlank(message = "O nome é obrigatório.")
+    @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres.")
+    @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O nome não pode conter números ou caracteres especiais.")
     private final String name;
+
+    @NotBlank(message = "A idade e Obrigatória" )
+    @Size(min = 1, max = 3, message = "A idade deve ter entre 1 e 10 caracteres.")
     private final int age;
+
+    @NotBlank(message = "Campo obrigatório")
+    @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres.")
     private final String bornCountry;
+
+    @NotBlank(message = "Campo obrigatório")
+    @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres.")
     private final String stateBornCountry;
+
     private String ID;
 
    public void setID(String ID){
