@@ -1,6 +1,5 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -19,7 +18,7 @@ public class InfoClassElements {
 
     @NotBlank(message = "A idade e Obrigatória" )
     @Size(min = 1, max = 3, message = "A idade deve ter entre 1 e 10 caracteres.")
-    private final int age;
+    private final String age;
 
     @NotBlank(message = "Campo obrigatório")
     @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres.")
@@ -34,38 +33,7 @@ public class InfoClassElements {
    public void setID(String ID){
         this.ID = (ID != null) ? ID : "";
    }
-
-
-   public String getName(){
-       Erros erro = Erros.NAME_ERRO;
-
-       if (name == null || name.isEmpty()){
-           return erro.formatErro( erro.getCODIGO(), erro.getMENSAGEM() );
-       }
-
-        return name;
-   }
-
-   public String getStateBornCountry(){
-       Erros erro = Erros.STATE_ERRO;
-
-       if (stateBornCountry == null || stateBornCountry.isEmpty()){
-           return erro.formatErro( erro.getCODIGO(), erro.getMENSAGEM() );
-       }
-
-       return stateBornCountry;
-   }
-
-   public String getBornCountry(){
-       Erros erro = Erros.COUNTRY_ERRO;
-
-       if (bornCountry == null || bornCountry.isEmpty()){
-           return erro.formatErro( erro.getCODIGO(), erro.getMENSAGEM() );
-       }
-       return bornCountry;
-   }
-
-    public InfoClassElements(int age, String name, String bornCountry, String stateBornCountry, String ID) {
+    public InfoClassElements(String age, String name, String bornCountry, String stateBornCountry, String ID) {
         this.age = age;
         this.name = name;
         this.bornCountry = bornCountry;
@@ -119,7 +87,7 @@ public class InfoClassElements {
 
     @JsonIgnore
     public boolean isAgeNull(){
-       return this.age <= 0;
+       return this.age.isEmpty();
     }
 
     @JsonIgnore

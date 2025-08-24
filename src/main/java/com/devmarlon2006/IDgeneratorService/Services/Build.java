@@ -10,7 +10,7 @@ public class Build {
     Status: Funcionando
      */
 
-    public static String idNameBuild(String Username, String State, String Country, int Age){
+    public static String idNameBuild(String Username, String State, String Country, String Age){
 
         if (Username == null){
            return "LIST_ERRO_NULL_VALUE";

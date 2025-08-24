@@ -12,16 +12,16 @@ public class IdByALL {
     Metodo Estavel
      */
 
-    public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, int Age_B5){
+    public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, String Age_B5){
 
         Erros textErro =  Erros.ALL_ERRO;
 
-        if (ErroMethods.Method5( Age_B5) || ErroMethods.Method4( Username_B5 ) || ErroMethods.Method4( State_B5 ) || ErroMethods.Method4( Country_B5)){
+        if (ErroMethods.Method5( Integer.parseInt( Age_B5 ) ) || ErroMethods.Method4( Username_B5 ) || ErroMethods.Method4( State_B5 ) || ErroMethods.Method4( Country_B5)){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
         }
 
         return (randomElements.elementRadom15( Username_B5 )
-                                +randomElements.elementRadom16(Age_B5)
+                                +randomElements.elementRadom16( Integer.valueOf( Age_B5 ) )
                                 + randomElements.elementRadom17( State_B5 )
                                 + randomElements.elementRadom18( Country_B5 ).toString().toUpperCase()).describeConstable();
     }
