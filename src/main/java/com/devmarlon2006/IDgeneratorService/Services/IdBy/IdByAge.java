@@ -10,7 +10,6 @@ import java.util.Optional;
 
 public class IdByAge {
 
-
     /*
     Status: Instavel
     */
@@ -19,9 +18,6 @@ public class IdByAge {
 
         Erros textErro =  Erros.AGE_ERRO;
 
-        if (Integer.parseInt( Age_B2 )< 0 || Integer.parseInt( Age_B2 ) > 125){
-            Age_B2 = "0";
-        }
 
         if(ErroMethods.Method5( Integer.parseInt( Age_B2 ) )){
             return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();

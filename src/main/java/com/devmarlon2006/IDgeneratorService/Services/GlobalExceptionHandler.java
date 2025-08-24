@@ -2,6 +2,8 @@ package com.devmarlon2006.IDgeneratorService.Services;
 
 import com.devmarlon2006.IDgeneratorService.Services.model.erroModel.ApiErroResponse;
 import com.devmarlon2006.IDgeneratorService.Services.model.erroModel.ErrorDetail;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,14 +23,48 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiErroResponse> handleValidationExceptions(MethodArgumentNotValidException ex, WebRequest request) {
 
-        ApiErroResponse apiErro = new ApiErroResponse();
         List<ErrorDetail> errorDetails = new ArrayList<>();
 
-        ex.getBindingResult().getAllErrors().forEach(error -> {
+        ex.getBindingResult().getAllErrors().forEach( error -> {
             String fieldName = ((FieldError) error).getField();
-            String errorMessage = error.getDefaultMessage(); });
+            String errorMessage = error.getDefaultMessage();
 
-        return new ResponseEntity<>( apiErro, HttpStatus.BAD_REQUEST);
+            String errorCode = mapErrorMessageToCode( errorMessage );
+
+            errorDetails.add(new ErrorDetail(errorCode, fieldName, errorMessage));
+        });
+
+
+        ApiErroResponse apiError = new ApiErroResponse();
+        apiError.setTimestamp( LocalDateTime.now());
+        apiError.setStatus(HttpStatus.BAD_REQUEST.value());
+        apiError.setError(HttpStatus.BAD_REQUEST.getReasonPhrase());
+        apiError.setMessage("A requisição contém erros de validação.");
+        apiError.setPath(request.getDescription(false).replace("uri=", ""));
+        apiError.setErrors(errorDetails);
+
+        return new ResponseEntity<>( apiError, HttpStatus.BAD_REQUEST );
     }
 
+
+    private String mapErrorMessageToCode(String errorMessage) {
+
+        if (errorMessage.contains("Username")) {
+            return Erros.NAME_ERRO.getMENSAGEM();
+        }
+
+        if (errorMessage.contains( "Age" )) {
+            return Erros.AGE_ERRO.getMENSAGEM();
+        }
+
+        if (errorMessage.contains( "State" )) {
+            return Erros.STATE_ERRO.getMENSAGEM();
+        }
+
+        if (errorMessage.contains( "Country" )) {
+            return Erros.COUNTRY_ERRO.getMENSAGEM();
+        }
+        return "0"; // Código de erro genérico
+
+    }
 }
