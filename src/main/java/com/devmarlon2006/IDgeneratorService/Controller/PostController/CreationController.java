@@ -22,10 +22,13 @@ public class CreationController{
     }
 
     @PostMapping("/CreateUserID")
-    public ResponseEntity<?> controllerIDCreation(@Valid @RequestBody User user){
+    public ResponseEntity<?> controllerIDCreation(@Valid @RequestBody User User){
 
-        user.setID( Build.idNameBuild(user.getName(), user.getStateBornCountry(), user.getBornCountry(), user.getAge()) );
-        UserRepository.save(user);
+        User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
+
+        System.out.println(User.getID());
+
+        UserRepository.save(User);
 
         return ResponseEntity.status( HttpStatus.CREATED).body("Usuário criado com sucesso!");
 

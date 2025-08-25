@@ -2,7 +2,7 @@ spring:
   application:
     name: IDgeneratorService
     datasource:
-      url: jdbc:mysql://10.0.0.108:3306/TaskData
+      url: jdbc:mysql://10.0.0.108:3306/user_data
       username: devmarlon2006
       password: 19210686#$Mn
       driver-class-name: com.mysql.cj.jdbc.Driver

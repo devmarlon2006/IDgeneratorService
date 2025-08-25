@@ -3,6 +3,7 @@ package com.devmarlon2006.IDgeneratorService.Services.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -15,7 +16,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "app_user")
 public class User {
+
+    @Id
+    private String ID;
 
     @NotBlank(message = "O nome é obrigatório - (Username)")
     @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres - (Username)")
@@ -41,15 +46,12 @@ public class User {
     @NotBlank(message = "E-amil obrigatório - (E-mail)")
     private String email;
 
-    @NotBlank(message = "Campo password Obrigatório - (Password)")
-    private String password;
+//    @NotBlank(message = "Campo password Obrigatório - (Password)")
+//    private String password;
 
-    private boolean isAdmin;
 
-    @Id
-    private String ID;
 
-    public InfoClassElements(){}
+    public User(){}
 
     public void setID(String ID){
         this.ID = (ID != null) ? ID : "";
