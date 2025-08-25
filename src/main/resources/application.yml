@@ -1,3 +1,12 @@
 spring:
   application:
     name: IDgeneratorService
+    datasource:
+      url: jdbc:mysql://10.0.0.108:3306/TaskData
+      username: devmarlon2006
+      password: 19210686#$Mn
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
