@@ -2,6 +2,7 @@ package com.devmarlon2006.IDgeneratorService.Controller.PostController;
 
 import com.devmarlon2006.IDgeneratorService.Data.UserRepository;
 import com.devmarlon2006.IDgeneratorService.Services.Build;
+import com.devmarlon2006.IDgeneratorService.Services.Service.UserService;
 import com.devmarlon2006.IDgeneratorService.Services.model.User.User;
 
 import jakarta.validation.Valid;
@@ -14,23 +15,23 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/create")
 public class CreationController{
 
-    private final UserRepository UserRepository;
+    private final UserService userService;
 
     @Autowired
-    public CreationController(UserRepository userRepository) {
-        UserRepository = userRepository;
+    public CreationController( UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/CreateUserID")
-    public ResponseEntity<?> controllerIDCreation(@Valid @RequestBody User User){
+    public ResponseEntity<?> controllerIDCreation(@RequestBody @Valid  User User) {
 
-        User.setID( Build.idNameBuild(User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge()) );
+        User.setID( Build.idNameBuild( User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge() ) );
 
-        System.out.println(User.getID());
+        System.out.println( User.getID() );
 
-        UserRepository.save(User);
+        userService.saveUser( User );
 
-        return ResponseEntity.status( HttpStatus.CREATED).body("Usuário criado com sucesso!");
+        return ResponseEntity.status( HttpStatus.CREATED ).body( "Usuário criado com sucesso!" );
 
     }
 
