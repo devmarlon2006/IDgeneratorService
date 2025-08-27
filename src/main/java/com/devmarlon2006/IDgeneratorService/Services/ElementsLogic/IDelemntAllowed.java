@@ -1,6 +1,4 @@
-package com.devmarlon2006.IDgeneratorService.Services;
-
-import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
+package com.devmarlon2006.IDgeneratorService.Services.ElementsLogic;
 
 public class IDelemntAllowed {
 

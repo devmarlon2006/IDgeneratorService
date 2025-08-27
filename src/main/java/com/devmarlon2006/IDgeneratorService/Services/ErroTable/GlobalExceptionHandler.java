@@ -1,8 +1,7 @@
-package com.devmarlon2006.IDgeneratorService.Services;
+package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 
 import com.devmarlon2006.IDgeneratorService.Services.model.erroModel.ApiErroResponse;
 import com.devmarlon2006.IDgeneratorService.Services.model.erroModel.ErrorDetail;
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

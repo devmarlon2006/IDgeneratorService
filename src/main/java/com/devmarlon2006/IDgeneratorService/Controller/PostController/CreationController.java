@@ -34,10 +34,4 @@ public class CreationController{
 
     }
 
-    @DeleteMapping("/Delete/{ID}")
-    public ResponseEntity<?> deleteUser (@PathVariable ("ID") @Valid String ID){
-        userService.deletarUser( ID );
-        return ResponseEntity.status( HttpStatus.OK ).body( "Usuário deletado com sucesso!" );
-    }
-
 }

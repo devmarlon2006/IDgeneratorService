@@ -3,7 +3,7 @@ package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
-import com.devmarlon2006.IDgeneratorService.Services.IDelemntAllowed;
+import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.IDelemntAllowed;
 
 import java.util.Optional;
 
