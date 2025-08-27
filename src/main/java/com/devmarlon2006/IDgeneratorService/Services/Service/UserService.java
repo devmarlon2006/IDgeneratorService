@@ -18,7 +18,10 @@ public class UserService {
 
     @Transactional
     public void saveUser(User user) {
-        userRepository.save(user);
+        userRepository.save( user );
     }
 
+    public void deletarUser(String id) {
+        userRepository.deleteById(id);
+    }
 }

@@ -46,10 +46,8 @@ public class User {
     @NotBlank(message = "E-amil obrigatório - (E-mail)")
     private String email;
 
-//    @NotBlank(message = "Campo password Obrigatório - (Password)")
-//    private String password;
-
-
+    @NotBlank(message = "Campo obrigatório")
+    private String password;
 
     public User(){}
 

@@ -1,6 +1,5 @@
 package com.devmarlon2006.IDgeneratorService.Controller.PostController;
 
-import com.devmarlon2006.IDgeneratorService.Data.UserRepository;
 import com.devmarlon2006.IDgeneratorService.Services.Build;
 import com.devmarlon2006.IDgeneratorService.Services.Service.UserService;
 import com.devmarlon2006.IDgeneratorService.Services.model.User.User;
@@ -12,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/create")
+@RequestMapping("/User")
 public class CreationController{
 
     private final UserService userService;
@@ -22,7 +21,7 @@ public class CreationController{
         this.userService = userService;
     }
 
-    @PostMapping("/CreateUserID")
+    @PostMapping("/Post/CreateUserID")
     public ResponseEntity<?> controllerIDCreation(@RequestBody @Valid  User User) {
 
         User.setID( Build.idNameBuild( User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge() ) );
@@ -33,6 +32,12 @@ public class CreationController{
 
         return ResponseEntity.status( HttpStatus.CREATED ).body( "Usuário criado com sucesso!" );
 
+    }
+
+    @DeleteMapping("/Delete/{ID}")
+    public ResponseEntity<?> deleteUser (@PathVariable ("ID") @Valid String ID){
+        userService.deletarUser( ID );
+        return ResponseEntity.status( HttpStatus.OK ).body( "Usuário deletado com sucesso!" );
     }
 
 }
