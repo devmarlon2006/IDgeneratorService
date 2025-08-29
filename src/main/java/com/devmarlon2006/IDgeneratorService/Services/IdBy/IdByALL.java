@@ -14,10 +14,8 @@ public class IdByALL {
 
     public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, String Age_B5){
 
-        Erros textErro =  Erros.ALL_ERRO;
-
         if (ErroMethods.Method5( Integer.parseInt( Age_B5 ) ) || ErroMethods.Method4( Username_B5 ) || ErroMethods.Method4( State_B5 ) || ErroMethods.Method4( Country_B5)){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
+            return  Erros.ALL_ERRO.name().describeConstable();
         }
 
         return (randomElements.elementRadom15( Username_B5 )

@@ -49,31 +49,31 @@ public class GlobalExceptionHandler {
     private String mapErrorMessageToCode(String errorMessage) {
 
         if (errorMessage.contains("Username")) {
-            return Erros.NAME_ERRO.getMENSAGEM();
+            return Erros.NAME_ERRO.name();
         }
 
         if (errorMessage.contains( "Age" )) {
-            return Erros.AGE_ERRO.getMENSAGEM();
+            return Erros.AGE_ERRO.name();
         }
 
         if (errorMessage.contains( "State" )) {
-            return Erros.STATE_ERRO.getMENSAGEM();
+            return Erros.STATE_ERRO.name();
         }
 
         if (errorMessage.contains( "Country" )) {
-            return Erros.COUNTRY_ERRO.getMENSAGEM();
+            return Erros.COUNTRY_ERRO.name();
         }
 
         if (errorMessage.contains( "E-mail" )) {
-            return Erros.EMAIL_ERRO.getMENSAGEM();
+            return Erros.EMAIL_ERRO.name();
         }
 
         if (errorMessage.contains( "All" )) {
-            return Erros.ALL_ERRO.getMENSAGEM();
+            return Erros.ALL_ERRO.name();
         }
 
         if (errorMessage.contains( "Password" )) {
-            return Erros.PASSWORD_ERRO.getMENSAGEM();
+            return Erros.PASSWORD_ERRO.name();
         }
         return "0"; // Código de erro genérico
 

@@ -15,10 +15,9 @@ public class IdByState {
 
     public static Optional<String> ByState(String State_3){
 
-        Erros textErro =  Erros.STATE_ERRO;
 
         if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 ) || ErroMethods.Method4( State_3 )){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
+            return Erros.STATE_ERRO.name().describeConstable();
         }
 
         return (randomElements.elementRandom8( State_3, 0 )

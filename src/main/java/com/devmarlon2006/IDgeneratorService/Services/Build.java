@@ -1,5 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services;
 
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.devmarlon2006.IDgeneratorService.Services.IdBy.*;
 
 import java.util.*;
@@ -12,8 +13,8 @@ public class Build {
 
     public static String idNameBuild(String Username, String State, String Country, String Age){
 
-        if (Username == null){
-           return "LIST_ERRO_NULL_VALUE";
+        if (Username == null || State == null || Country == null || Age == null){
+           return Erros.LIST_ERRO.name();
         }
 
         List <String> idcom = new ArrayList<>();

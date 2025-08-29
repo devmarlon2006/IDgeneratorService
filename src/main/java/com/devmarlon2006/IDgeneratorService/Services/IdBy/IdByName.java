@@ -15,10 +15,8 @@ public class IdByName {
 
     public static Optional<String> ByName(String Name_B1){
 
-        Erros textErro =  Erros.NAME_ERRO;
-
         if(ErroMethods.Method1( Name_B1 ) || ErroMethods.Method2( Name_B1 ) || ErroMethods.Method3( Name_B1 ) || ErroMethods.Method4( Name_B1 )){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
+            return Erros.NAME_ERRO.name().describeConstable();
         }
 
         return (IDelemntAllowed.AllowedCharacter(Name_B1).toString()

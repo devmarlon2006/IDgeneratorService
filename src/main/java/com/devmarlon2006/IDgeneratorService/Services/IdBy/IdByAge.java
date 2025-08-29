@@ -16,11 +16,8 @@ public class IdByAge {
 
     public static Optional <String> ByAge(String Age_B2){
 
-        Erros textErro =  Erros.AGE_ERRO;
-
-
         if(ErroMethods.Method5( Integer.parseInt( Age_B2 ) )){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
+            return Erros.AGE_ERRO.name().describeConstable();
         }
 
 

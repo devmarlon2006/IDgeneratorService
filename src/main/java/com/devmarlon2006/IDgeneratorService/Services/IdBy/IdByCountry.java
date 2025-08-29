@@ -16,10 +16,8 @@ public class IdByCountry {
 
     public static Optional<String> ByCountry(String Country){
 
-        Erros textErro =  Erros.COUNTRY_ERRO;
-
         if(ErroMethods.Method1( Country ) || ErroMethods.Method2( Country ) || ErroMethods.Method3( Country ) || ErroMethods.Method4( Country )){
-            return textErro.formatErro( textErro.getCODIGO(), textErro.getMENSAGEM()).describeConstable();
+            return Erros.COUNTRY_ERRO.name().describeConstable();
         }
 
         return (randomElements.elementRandom11( Country )
