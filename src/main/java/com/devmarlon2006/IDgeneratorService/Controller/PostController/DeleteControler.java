@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/User")
 public class DeleteControler {
 
-
     private final UserService userService;
     @Autowired
     public DeleteControler(UserService userService) {
