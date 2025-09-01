@@ -4,6 +4,9 @@ public class IDelemntAllowed {
 
     public static Character AllowedCharacter(String IDElement1) {
 
+        if(IDElement1 == null)
+            return null;
+
         String allowedCharacters;
 
         char idchar1 = IDElement1.toUpperCase().charAt( 0 );
@@ -113,7 +116,7 @@ public class IDelemntAllowed {
                 allowedCharacters = "23432807adhvf642";
                 yield randomElements.elementRandom( allowedCharacters );
             }
-            default -> idchar1;
+            default -> '0';
         };
 
         return idchar1 ;

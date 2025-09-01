@@ -1,7 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services;
 
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
-import com.devmarlon2006.IDgeneratorService.Services.IdBy.*;
+import com.devmarlon2006.IDgeneratorService.Services.IdBy.By;
 
 import java.util.*;
 
@@ -14,26 +13,26 @@ public class Build {
     public static String idNameBuild(String Username, String State, String Country, String Age){
 
         if (Username == null || State == null || Country == null || Age == null){
-           return Erros.LIST_ERRO.name();
+           return null;
         }
 
         List <String> idcom = new ArrayList<>();
 
-        idcom.add( IdByName.ByName( Username ).orElse( "" ) ); // Bloco 1
+        idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
 
-        idcom.add(IdByAge.ByAge(Age).orElse( "" )); // Bloco 2
+        idcom.add(By.ByAge(Age).orElse( "" )); // Bloco 2
 
-        idcom.add(IdByState.ByState( State ).orElse( "" )); // Bloco 3
+        idcom.add(By.ByState( State ).orElse( "" )); // Bloco 3
 
-        idcom.add(IdByCountry.ByCountry( Country ).orElse( "" )); // Bloco 4
+        idcom.add(By.ByCountry( Country ).orElse( "" )); // Bloco 4
 
-        idcom.add( IdByALL.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
+        idcom.add(By.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
 
         for (int i = 0; i < idcom.size(); i++) {
 
-            String[] list = {"Username", "Age", "State", "Country", "All"};
+            String[] list = {"Username", "Age", "State", "Country"};
 
-            if (idcom.get( i ).contains( "ID_ERRO" )) {
+            if (idcom.get( i ).isEmpty()){
                 idcom.clear();
                 idcom.add( "LIST_ERRO_INCORRECT_VALUE("+ list[i] + ")" );
                 return String.join( "", idcom );

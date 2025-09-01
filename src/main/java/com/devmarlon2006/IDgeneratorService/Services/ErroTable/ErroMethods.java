@@ -1,5 +1,8 @@
 package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(staticName = "private")
 public class ErroMethods {
 
     // Para tamanhos de nomes invalidos.

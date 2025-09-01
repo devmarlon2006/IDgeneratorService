@@ -9,5 +9,5 @@ public enum Erros {
     STATE_ERRO,
     ALL_ERRO,
     EMAIL_ERRO,
-    PASSWORD_ERRO;
+    PASSWORD_ERRO
 }

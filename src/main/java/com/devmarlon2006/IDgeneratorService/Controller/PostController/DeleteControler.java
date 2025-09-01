@@ -20,6 +20,7 @@ public class DeleteControler {
     public DeleteControler(UserService userService) {
         this.userService = userService;
     }
+
     @DeleteMapping("/Delete/{ID}")
     public ResponseEntity<?> deleteUser (@PathVariable("ID") @Valid String ID){
         userService.deletarUser( ID );
