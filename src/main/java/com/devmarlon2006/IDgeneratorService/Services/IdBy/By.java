@@ -53,8 +53,6 @@ public class By {
             return Optional.empty();
         }
 
-
-
         try{
             List <String> table = new ArrayList<>();
 
@@ -67,11 +65,9 @@ public class By {
 
             return String.join("",table).describeConstable();
 
-        }catch (IndexOutOfBoundsException exception){
+        }catch (IndexOutOfBoundsException | NullPointerException exception){
             return Optional.empty();
         }
-
-
     }
 
 
@@ -90,7 +86,7 @@ public class By {
 
 
             List<String> table = new ArrayList<>();
-            
+
             ErroMethods.validateTableSize( table, 4 );
 
             table.add(randomElements.elementRandom11( Country ));
@@ -100,7 +96,7 @@ public class By {
 
             return String.join("",table).describeConstable();
 
-        }catch (IndexOutOfBoundsException exception){
+        }catch (IndexOutOfBoundsException | NullPointerException exception){
             return Optional.empty();
         }
 
@@ -129,7 +125,7 @@ public class By {
 
             return String.join("",table).describeConstable();
 
-        }catch (IndexOutOfBoundsException exception){
+        }catch (IndexOutOfBoundsException | NullPointerException exception){
             return Optional.empty();
         }
 
@@ -148,7 +144,6 @@ public class By {
             return Optional.empty();
         }
 
-
         try{
 
             List<String> table = new ArrayList<>();
@@ -161,7 +156,7 @@ public class By {
 
             return String.join("",table).describeConstable();
 
-        }catch (IndexOutOfBoundsException exception){
+        }catch (IndexOutOfBoundsException | NullPointerException exception){
             return Optional.empty();
         }
     }
