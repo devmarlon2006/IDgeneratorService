@@ -8,12 +8,12 @@ import java.util.function.UnaryOperator;
 public class ErroMethods {
 
     // Para tamanhos de nomes invalidos.
-    public static boolean Method1(String name){
+    public static boolean MethodInvalidSize(String name){
         return name.length() < 3 || name.length() > 125;
     }
 
     // Para nomes com numeros invalidos.
-    public static boolean Method2(String name){
+    public static boolean InvalidNumberOnName(String name){
 
         for (char caractere : name.toCharArray()) {
             if (Character.isDigit(caractere)) {
@@ -24,26 +24,30 @@ public class ErroMethods {
 
     }
 
-    // Para nomes com caracteres especiais invalidos.
-    public static boolean Method3(String name){
-        if (name == null){
-            return true;
-        }
+    // Para nomes com caracteres especiais inválidos.
+    public static boolean InvalidCharacter(String name){
         return !name.matches( "[a-zA-Z0-9 ]+");
     }
 
+    //Para Numeros que contem letras.
+    public static boolean IntContainsinvalideChars(String Parameter){
+        return !Parameter.matches( "[0-9]+");
+    }
+
     // Para elementos que voltaram um erro.
-    public static boolean Method4(String name){
+    public static boolean MethodErro(String name){
         return name.equals("ERRO");
     }
 
     // Para limites de idade.
-    public static boolean Method5(int Parameter){
+    public static boolean AgeLimit(int Parameter){
         return Parameter <= 0 || Parameter > 125;
     }
 
     // Para parametros nulos.
-    public static boolean Method6(String Parameter){
+    public static boolean NullParameter(String Parameter){
         return Parameter == null;
     }
+
+
 }

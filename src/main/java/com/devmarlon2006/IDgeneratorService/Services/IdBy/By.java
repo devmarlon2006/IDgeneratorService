@@ -14,13 +14,19 @@ public class By {
 
     public static Optional <String> ByAge(String Age_B2){
 
-        if (ErroMethods.Method6( Age_B2 )){
+        if (ErroMethods.NullParameter( Age_B2 )){
             return Optional.empty();// If the age is null
         }
 
         List<String> table = new ArrayList<>();
 
         try{
+            //Only one return true for the call of Optional.empty()
+            if( ErroMethods.AgeLimit( Integer.parseInt( Age_B2)) || ErroMethods.IntContainsinvalideChars( Age_B2 )){
+
+                return Optional.empty();
+
+            }
 
             Integer.parseInt( Age_B2 );
 
@@ -44,7 +50,8 @@ public class By {
         List <String> table = new ArrayList<>();
 
         try{
-            if (ErroMethods.Method6( Username_B5 ) || ErroMethods.Method6( State_B5 ) || ErroMethods.Method6( Country_B5 ) || ErroMethods.Method6( Age_B5 )){
+            //Only one return true for the call of Optional.empty()
+            if (false){
                 return Optional.empty();
             }
 
@@ -63,7 +70,7 @@ public class By {
 
     public static Optional<String> ByCountry( String Country){
 
-        if (ErroMethods.Method6( Country )){
+        if (ErroMethods.NullParameter( Country )){
             return Optional.empty();
         }
 
@@ -71,9 +78,11 @@ public class By {
 
 
         try{
-            if(ErroMethods.Method1( Country ) || ErroMethods.Method2( Country ) || ErroMethods.Method3( Country ) || ErroMethods.Method4( Country )){
+            //Only return true for the call of Optional.empty()
+            if(ErroMethods.MethodInvalidSize( Country ) || ErroMethods.InvalidCharacter( Country ) || ErroMethods.InvalidNumberOnName( Country )){
                 return Optional.empty();
             }
+
             table.add(randomElements.elementRandom11( Country ));
             table.add(randomElements.elementRadom12( Country ));
             table.add( String.valueOf(randomElements.elementRadom13( Country)));
@@ -91,12 +100,9 @@ public class By {
 
         List<String> table = new ArrayList<>();
 
-
-
-
         try {
-
-            if(ErroMethods.Method1( Name_B1 ) || ErroMethods.Method2( Name_B1 ) || ErroMethods.Method3( Name_B1 ) || ErroMethods.Method4( Name_B1 )){
+            //Only return true for the call of Optional.empty()
+            if(ErroMethods.InvalidCharacter( Name_B1 ) || ErroMethods.InvalidNumberOnName( Name_B1 ) || ErroMethods.MethodInvalidSize( Name_B1 )){
                 return Optional.empty();
             }
 
@@ -118,7 +124,8 @@ public class By {
         List<String> table = new ArrayList<>();
 
         try{
-            if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 ) || ErroMethods.Method4( State_3 )){
+            //Only return true for the call of Optional.empty()
+            if(ErroMethods.MethodInvalidSize( State_3 ) || ErroMethods.InvalidNumberOnName( State_3 ) || ErroMethods.InvalidCharacter( State_3 )){
                 return Optional.empty();
             }
 
