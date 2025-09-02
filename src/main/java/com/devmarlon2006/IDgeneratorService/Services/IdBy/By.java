@@ -29,6 +29,7 @@ public class By {
             table.add( String.valueOf( randomElements.elementRandom6( Integer.parseInt( Age_B2 ) ).toString().charAt( 0 ) ) );
             table.add( String.valueOf(randomElements.elementRandom7( Integer.parseInt( Age_B2 ) )));
 
+
         }catch (NumberFormatException exception){
             return Optional.empty(); // If the age is not a number
         }
@@ -40,54 +41,99 @@ public class By {
 
     public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, String Age_B5){
 
-        if (ErroMethods.Method5( Integer.parseInt( Age_B5 ) ) || ErroMethods.Method4( Username_B5 ) || ErroMethods.Method4( State_B5 ) || ErroMethods.Method4( Country_B5)){
+        List <String> table = new ArrayList<>();
+
+        try{
+            if (ErroMethods.Method6( Username_B5 ) || ErroMethods.Method6( State_B5 ) || ErroMethods.Method6( Country_B5 ) || ErroMethods.Method6( Age_B5 )){
+                return Optional.empty();
+            }
+
+            table.add(String.valueOf( randomElements.elementRadom15( Username_B5 ) ) );
+            table.add(String.valueOf( randomElements.elementRadom16( Integer.valueOf( Age_B5 ) ) ));
+            table.add(String.valueOf( randomElements.elementRadom17( State_B5 ) ) );
+            table.add(randomElements.elementRadom18( Country_B5 ).toString().toUpperCase() );
+
+        }catch (NullPointerException exception){
             return Optional.empty();
         }
 
-        return (randomElements.elementRadom15( Username_B5 )
-                +randomElements.elementRadom16( Integer.valueOf( Age_B5 ) )
-                + randomElements.elementRadom17( State_B5 )
-                + randomElements.elementRadom18( Country_B5 ).toString().toUpperCase()).describeConstable();
+        return String.join("",table).describeConstable();
     }
 
 
     public static Optional<String> ByCountry( String Country){
 
-        if(ErroMethods.Method1( Country ) || ErroMethods.Method2( Country ) || ErroMethods.Method3( Country ) || ErroMethods.Method4( Country )){
+        if (ErroMethods.Method6( Country )){
             return Optional.empty();
         }
 
-        return (randomElements.elementRandom11( Country )
-                + randomElements.elementRadom12( Country )
-                + randomElements.elementRadom13( Country)
-                + randomElements.elementRadom14( Country)).describeConstable();
+        List<String> table = new ArrayList<>();
+
+
+        try{
+            if(ErroMethods.Method1( Country ) || ErroMethods.Method2( Country ) || ErroMethods.Method3( Country ) || ErroMethods.Method4( Country )){
+                return Optional.empty();
+            }
+            table.add(randomElements.elementRandom11( Country ));
+            table.add(randomElements.elementRadom12( Country ));
+            table.add( String.valueOf(randomElements.elementRadom13( Country)));
+            table.add(String.valueOf( randomElements.elementRadom14( Country ) ));
+
+        }catch (NullPointerException exception){
+            return Optional.empty();
+        }
+
+        return String.join("",table).describeConstable();
 
     }
 
     public static Optional<String> ByName(String Name_B1){
 
-        if(ErroMethods.Method1( Name_B1 ) || ErroMethods.Method2( Name_B1 ) || ErroMethods.Method3( Name_B1 ) || ErroMethods.Method4( Name_B1 )){
+        List<String> table = new ArrayList<>();
+
+
+
+
+        try {
+
+            if(ErroMethods.Method1( Name_B1 ) || ErroMethods.Method2( Name_B1 ) || ErroMethods.Method3( Name_B1 ) || ErroMethods.Method4( Name_B1 )){
+                return Optional.empty();
+            }
+
+            table.add( IDelemntAllowed.AllowedCharacter(Name_B1).toString() );
+            table.add( String.valueOf(randomElements.element2Con( 7 ,Name_B1 ).charAt( 0 ) ));
+            table.add(String.valueOf( randomElements.element2Con(5, Name_B1).charAt( 0 ) ));
+            table.add( String.valueOf(randomElements.elementRandom3( Name_B1 ).charAt( 0 )));
+
+        }catch (NullPointerException exception){
             return Optional.empty();
         }
 
-        return (IDelemntAllowed.AllowedCharacter(Name_B1).toString()
-                + randomElements.element2Con( 7 ,Name_B1 ).charAt( 0 )
-                + randomElements.element2Con(5, Name_B1).charAt( 0 )
-                + randomElements.elementRandom3( Name_B1 ).charAt( 0 )).describeConstable();
+        return String.join("",table).describeConstable();
 
     }
 
     public static Optional<String> ByState(String State_3){
 
+        List<String> table = new ArrayList<>();
 
-        if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 ) || ErroMethods.Method4( State_3 )){
+        try{
+            if(ErroMethods.Method1( State_3 ) || ErroMethods.Method2( State_3 ) || ErroMethods.Method3( State_3 ) || ErroMethods.Method4( State_3 )){
+                return Optional.empty();
+            }
+
+            table.add(String.valueOf(randomElements.elementRandom8( State_3, 0 )));
+            table.add(String.valueOf(randomElements.elementRandom8( State_3, 1 )));
+            table.add(randomElements.elementRandom9( State_3 ));
+            table.add(String.valueOf(randomElements.elementRandom10( State_3 )));
+
+        }catch (NullPointerException exception){
             return Optional.empty();
         }
 
-        return (randomElements.elementRandom8( State_3, 0 )
-                + randomElements.elementRandom8( State_3, 1 ).toString()
-                + randomElements.elementRandom9( State_3)
-                + randomElements.elementRandom10(State_3)).describeConstable();
+
+
+        return String.join("",table).describeConstable();
 
 
     }

@@ -1,6 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 
-public enum Erros {
+public enum Erros{
     LIST_ERRO,
     ID_ERRO,
     NAME_ERRO,

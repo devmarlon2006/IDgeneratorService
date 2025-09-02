@@ -26,11 +26,9 @@ public class ErroMethods {
 
     // Para nomes com caracteres especiais invalidos.
     public static boolean Method3(String name){
-
         if (name == null){
             return true;
         }
-
         return !name.matches( "[a-zA-Z0-9 ]+");
     }
 
