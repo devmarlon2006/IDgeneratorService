@@ -18,15 +18,24 @@ public class Build {
 
         List <String> idcom = new ArrayList<>();
 
-        idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
 
-        idcom.add(By.ByAge(Age).orElse( "" )); // Bloco 2
+        try{
 
-        idcom.add(By.ByState( State ).orElse( "" )); // Bloco 3
+            idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
 
-        idcom.add(By.ByCountry( Country ).orElse( "" )); // Bloco 4
+            idcom.add(By.ByAge(Age).orElse( "" )); // Bloco 2
 
-        idcom.add(By.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
+            idcom.add(By.ByState( State ).orElse( "" )); // Bloco 3
+
+            idcom.add(By.ByCountry( Country ).orElse( "" )); // Bloco 4
+
+            idcom.add(By.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
+
+        }catch (IndexOutOfBoundsException exception){
+            return null;
+        }
+
+
 
         for (int i = 0; i < idcom.size(); i++) {
 

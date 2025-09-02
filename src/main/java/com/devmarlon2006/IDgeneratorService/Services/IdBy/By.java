@@ -4,25 +4,39 @@ import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.IDelemntAllow
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
 import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
-
-
 
 public class By {
 
+    private By(){} // Private constructor to avoid instantiation
+
     public static Optional <String> ByAge(String Age_B2){
 
-        if(ErroMethods.Method5( Integer.parseInt( Age_B2 ) )){
-            return Optional.empty();
+        if (ErroMethods.Method6( Age_B2 )){
+            return Optional.empty();// If the age is null
         }
 
+        List<String> table = new ArrayList<>();
 
-            return (randomElements.elementRandom4( Integer.parseInt( Age_B2 ) ).charAt( 0 )
-                                + randomElements.elementRandom5( Integer.parseInt( Age_B2 ) )
-                                + randomElements.elementRandom6( Integer.parseInt( Age_B2 ) ).toString().charAt( 0 )
-                                + randomElements.elementRandom7( Integer.parseInt( Age_B2 ) )).describeConstable();
+        try{
 
+            Integer.parseInt( Age_B2 );
+
+            table.add( String.valueOf( randomElements.elementRandom4( Integer.parseInt( Age_B2 ) ).charAt( 0 ) ) );
+            table.add( String.valueOf( randomElements.elementRandom5( Integer.parseInt( Age_B2 ) ).charAt( 0 ) ) );
+            table.add( String.valueOf( randomElements.elementRandom6( Integer.parseInt( Age_B2 ) ).toString().charAt( 0 ) ) );
+            table.add( String.valueOf(randomElements.elementRandom7( Integer.parseInt( Age_B2 ) )));
+
+        }catch (NumberFormatException exception){
+            return Optional.empty(); // If the age is not a number
         }
+
+        return String.join("",table).describeConstable();
+
+    }
+
 
     public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, String Age_B5){
 
@@ -37,7 +51,7 @@ public class By {
     }
 
 
-    public static Optional<String> ByCountry(String Country){
+    public static Optional<String> ByCountry( String Country){
 
         if(ErroMethods.Method1( Country ) || ErroMethods.Method2( Country ) || ErroMethods.Method3( Country ) || ErroMethods.Method4( Country )){
             return Optional.empty();

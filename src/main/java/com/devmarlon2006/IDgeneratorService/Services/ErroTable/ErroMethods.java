@@ -2,6 +2,8 @@ package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 
 import lombok.NoArgsConstructor;
 
+import java.util.function.UnaryOperator;
+
 @NoArgsConstructor(staticName = "private")
 public class ErroMethods {
 
@@ -24,6 +26,11 @@ public class ErroMethods {
 
     // Para nomes com caracteres especiais invalidos.
     public static boolean Method3(String name){
+
+        if (name == null){
+            return true;
+        }
+
         return !name.matches( "[a-zA-Z0-9 ]+");
     }
 
@@ -35,5 +42,10 @@ public class ErroMethods {
     // Para limites de idade.
     public static boolean Method5(int Parameter){
         return Parameter <= 0 || Parameter > 125;
+    }
+
+    // Para parametros nulos.
+    public static boolean Method6(String Parameter){
+        return Parameter == null;
     }
 }

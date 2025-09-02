@@ -24,11 +24,20 @@ public class CreationController{
     @PostMapping("/Post/CreateUserID")
     public ResponseEntity<?> controllerIDCreation(@RequestBody @Valid  User User) {
 
-        User.setID( Build.idNameBuild( User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge() ) );
 
-        System.out.println( User.getID() );
+        try{
+
+            User.setID( Build.idNameBuild( User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge() ) );
+            System.out.println( User.getID() );
+
+        }catch (NullPointerException exception){
+
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST).body( "Invalid" );
+
+        }
 
         userService.saveUser( User );
+
 
         return ResponseEntity.status( HttpStatus.CREATED ).body( "Usuário criado com sucesso!" );
 
