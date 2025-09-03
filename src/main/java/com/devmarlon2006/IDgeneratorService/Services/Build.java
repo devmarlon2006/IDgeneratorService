@@ -1,5 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services;
 
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.IdBy.By;
 
 import java.util.*;
@@ -16,10 +17,11 @@ public class Build {
            return null;
         }
 
-        List <String> idcom = new ArrayList<>();
-
-
         try{
+
+            List <String> idcom = new ArrayList<>();
+
+            ErroMethods.validateTableSize( idcom, 5 );
 
             idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
 
@@ -31,25 +33,11 @@ public class Build {
 
             idcom.add(By.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
 
-        }catch (IndexOutOfBoundsException exception){
+            return String.join("", idcom);
+
+        }catch (IndexOutOfBoundsException | NullPointerException exception){
             return null;
         }
-
-
-
-        for (int i = 0; i < idcom.size(); i++) {
-
-            String[] list = {"Username", "Age", "State", "Country"};
-
-            if (idcom.get( i ).isEmpty()){
-                idcom.clear();
-                idcom.add( "LIST_ERRO_INCORRECT_VALUE("+ list[i] + ")" );
-                return String.join( "", idcom );
-            }
-
-        }
-
-        return String.join("", idcom);
     }
 }
 

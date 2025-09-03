@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Controller.PostController;
 
 import com.devmarlon2006.IDgeneratorService.Services.Build;
+import com.devmarlon2006.IDgeneratorService.Services.ErroTable.Erros;
 import com.devmarlon2006.IDgeneratorService.Services.Service.UserService;
 import com.devmarlon2006.IDgeneratorService.Services.model.User.User;
 
@@ -24,19 +25,37 @@ public class CreationController{
     @PostMapping("/Post/CreateUserID")
     public ResponseEntity<?> controllerIDCreation(@RequestBody @Valid  User User) {
 
+        if (User == null){
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST).body( "Usuário incompleto" );
+        }
+
+        if (User.getName() == null || User.getStateBornCountry() == null || User.getBornCountry() == null || User.getAge() == null){
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST).body( Erros.USER_ERRO);
+        }
+
 
         try{
 
             User.setID( Build.idNameBuild( User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge() ) );
             System.out.println( User.getID() );
 
-        }catch (NullPointerException exception){
+        }catch (ClassCastException | NullPointerException exception){
 
-            return ResponseEntity.status( HttpStatus.BAD_REQUEST).body( "Invalid" );
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST).body( Erros.INTERNAL_SERVER_ERROR);
 
         }
 
-        userService.saveUser( User );
+        try{
+
+            userService.saveUser( User );
+
+        }catch(SecurityException exception){
+
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( Erros.SAVE_DATA_ERRO );
+
+        }
+
+
 
 
         return ResponseEntity.status( HttpStatus.CREATED ).body( "Usuário criado com sucesso!" );

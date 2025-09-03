@@ -9,5 +9,8 @@ public enum Erros{
     STATE_ERRO,
     ALL_ERRO,
     EMAIL_ERRO,
-    PASSWORD_ERRO
+    PASSWORD_ERRO,
+    USER_ERRO,
+    INTERNAL_SERVER_ERROR,
+    SAVE_DATA_ERRO,
 }
