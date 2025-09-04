@@ -13,4 +13,7 @@ public enum Erros{
     USER_ERRO,
     INTERNAL_SERVER_ERROR,
     SAVE_DATA_ERRO,
+    DELETE_DATA_ERRO,
+    UPDATE_DATA_ERRO,
+    NOT_FOUND,
 }
