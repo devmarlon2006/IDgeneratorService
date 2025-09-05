@@ -34,8 +34,7 @@ public class Build {
 
             return String.join("", idcom);
 
-            CustomsExeptions.validateTableSize( idcom, 5 );
-
+            //CustomsExeptions.validateTableSize( idcom, 5 );
 
         }catch (IndexOutOfBoundsException | NullPointerException exception){
             return null;
