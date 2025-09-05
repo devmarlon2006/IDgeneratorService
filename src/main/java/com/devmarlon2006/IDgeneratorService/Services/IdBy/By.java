@@ -30,18 +30,20 @@ public class By {
             int idade = Integer.parseInt( Age_B2 );
 
             List<String> table = new ArrayList<>();
-            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção
+
 
             table.add( String.valueOf( randomElements.elementRandom4( idade ).charAt( 0 ) ) );
             table.add( String.valueOf( randomElements.elementRandom5( idade ).charAt( 0 ) ) );
             table.add( String.valueOf( randomElements.elementRandom6( idade ).toString().charAt( 0 ) ) );
             table.add( String.valueOf(randomElements.elementRandom7( idade )));
 
+            ErroMethods.validateTableSize( table, 4 );  //Lançamento de exceção - !!Corrigir!!
+
             return String.join("",table).describeConstable();
 
 
         }catch (NumberFormatException | IndexOutOfBoundsException exception){
-            return Optional.empty(); // If the age is not a number
+            return exception.getMessage().describeConstable();
         }
 
     }
@@ -56,12 +58,14 @@ public class By {
         try{
             List <String> table = new ArrayList<>();
 
-            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção
+
 
             table.add(String.valueOf( randomElements.elementRadom15( Username_B5 ) ) );
             table.add(String.valueOf( randomElements.elementRadom16( Integer.valueOf( Age_B5 ) ) ));
             table.add(String.valueOf( randomElements.elementRadom17( State_B5 ) ) );
             table.add(randomElements.elementRadom18( Country_B5 ).toString().toUpperCase() );
+
+            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -87,12 +91,14 @@ public class By {
 
             List<String> table = new ArrayList<>();
 
-            ErroMethods.validateTableSize( table, 4 );
+
 
             table.add(randomElements.elementRandom11( Country ));
             table.add(randomElements.elementRadom12( Country ));
             table.add( String.valueOf(randomElements.elementRadom13( Country)));
             table.add(String.valueOf( randomElements.elementRadom14( Country ) ));
+
+            ErroMethods.validateTableSize( table, 4 ); // Lançameto de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -116,12 +122,14 @@ public class By {
         try {
 
             List<String> table = new ArrayList<>();
-            ErroMethods.validateTableSize( table, 4 );
+
 
             table.add( IDelemntAllowed.AllowedCharacter(Name_B1).toString() );
             table.add( String.valueOf(randomElements.element2Con( 7 ,Name_B1 ).charAt( 0 ) ));
             table.add(String.valueOf( randomElements.element2Con(5, Name_B1).charAt( 0 ) ));
             table.add( String.valueOf(randomElements.elementRandom3( Name_B1 ).charAt( 0 )));
+
+            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -147,12 +155,14 @@ public class By {
         try{
 
             List<String> table = new ArrayList<>();
-            ErroMethods.validateTableSize( table, 4 );
+
 
             table.add(String.valueOf(randomElements.elementRandom8( State_3, 0 )));
             table.add(String.valueOf(randomElements.elementRandom8( State_3, 1 )));
             table.add(randomElements.elementRandom9( State_3 ));
             table.add(String.valueOf(randomElements.elementRandom10( State_3 )));
+
+            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 

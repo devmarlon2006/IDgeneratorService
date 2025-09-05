@@ -1,6 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Controller.PostController;
 
 import com.devmarlon2006.IDgeneratorService.Services.Build;
+import com.devmarlon2006.IDgeneratorService.Services.model.CreationResponse;
 import com.devmarlon2006.IDgeneratorService.Services.model.User.User;
 
 import jakarta.validation.Valid;
@@ -11,18 +12,14 @@ import org.springframework.web.bind.annotation.*;
 public class CreationController{
 
     @PostMapping("/Post/CreateUserID")
-    public String controllerIDCreation(@RequestBody @Valid  User User) {
+    public CreationResponse controllerIDCreation(@RequestBody @Valid  User user) {
 
-        System.out.println(User.getName());
-        System.out.println(User.getStateBornCountry());
-        System.out.println(User.getBornCountry());
-        System.out.println(User.getAge());
+        user.setID( Build.idNameBuild( user.getName(), user.getStateBornCountry(), user.getBornCountry(), user.getAge() ) );
 
-        User.setID( Build.idNameBuild( User.getName(), User.getStateBornCountry(), User.getBornCountry(), User.getAge() ) );
+        System.out.println(user.getID());
 
-        System.out.println(User.getID());
+        return new CreationResponse(user.getID());
 
-        return User.getID();
     }
 
 }

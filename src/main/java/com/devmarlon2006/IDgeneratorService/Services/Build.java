@@ -21,7 +21,7 @@ public class Build {
 
             List <String> idcom = new ArrayList<>();
 
-            ErroMethods.validateTableSize( idcom, 5 );
+            //ErroMethods.validateTableSize( idcom, 5 );
 
             idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
 

@@ -3,8 +3,6 @@ package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.UnaryOperator;
 
 @NoArgsConstructor(staticName = "private")
 public class ErroMethods {
@@ -34,11 +32,6 @@ public class ErroMethods {
     //Para Numeros que contem letras.
     public static boolean IntContainsinvalideChars(String Parameter){
         return !Parameter.matches( "[0-9]+");
-    }
-
-    // Para elementos que voltaram um erro.
-    public static boolean MethodErro(String name){
-        return name.equals("ERRO");
     }
 
     // Para limites de idade.

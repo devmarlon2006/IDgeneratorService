@@ -1,21 +1,23 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 // POJO -> Plain Old Java Object
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
-    @Id
-    private String ID;
+
 
     @NotBlank(message = "O nome é obrigatório - (Username)")
     @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres - (Username)")
@@ -37,7 +39,7 @@ public class User {
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O Campo pais não pode conter números ou caracteres especiais - State")
     private String stateBornCountry;
 
-    public User(){}
+    private String ID;
 
     public void setID(String ID){
         this.ID = (ID != null) ? ID : "";
