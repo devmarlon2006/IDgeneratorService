@@ -2,7 +2,8 @@ package com.devmarlon2006.IDgeneratorService.Services.IdBy;
 
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.IDelemntAllowed;
 import com.devmarlon2006.IDgeneratorService.Services.ElementsLogic.randomElements;
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
+import com.devmarlon2006.IDgeneratorService.Services.erroArea.CustomExeption.CustomsExeptions;
+import com.devmarlon2006.IDgeneratorService.Services.erroArea.ErroMethods;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class By {
             table.add( String.valueOf( randomElements.elementRandom6( idade ).toString().charAt( 0 ) ) );
             table.add( String.valueOf(randomElements.elementRandom7( idade )));
 
-            ErroMethods.validateTableSize( table, 4 );  //Lançamento de exceção - !!Corrigir!!
+            CustomsExeptions.validateTableSize( table, 4 );  //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -65,7 +66,7 @@ public class By {
             table.add(String.valueOf( randomElements.elementRadom17( State_B5 ) ) );
             table.add(randomElements.elementRadom18( Country_B5 ).toString().toUpperCase() );
 
-            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
+            CustomsExeptions.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -98,7 +99,7 @@ public class By {
             table.add( String.valueOf(randomElements.elementRadom13( Country)));
             table.add(String.valueOf( randomElements.elementRadom14( Country ) ));
 
-            ErroMethods.validateTableSize( table, 4 ); // Lançameto de exceção - !!Corrigir!!
+            CustomsExeptions.validateTableSize( table, 4 ); // Lançameto de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -129,7 +130,7 @@ public class By {
             table.add(String.valueOf( randomElements.element2Con(5, Name_B1).charAt( 0 ) ));
             table.add( String.valueOf(randomElements.elementRandom3( Name_B1 ).charAt( 0 )));
 
-            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
+            CustomsExeptions.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 
@@ -162,7 +163,7 @@ public class By {
             table.add(randomElements.elementRandom9( State_3 ));
             table.add(String.valueOf(randomElements.elementRandom10( State_3 )));
 
-            ErroMethods.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
+            CustomsExeptions.validateTableSize( table, 4 ); //Lançamento de exceção - !!Corrigir!!
 
             return String.join("",table).describeConstable();
 

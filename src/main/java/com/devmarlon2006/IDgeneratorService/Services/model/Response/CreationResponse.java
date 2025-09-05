@@ -1,10 +1,10 @@
-package com.devmarlon2006.IDgeneratorService.Services.model;
+package com.devmarlon2006.IDgeneratorService.Services.model.Response;
 
 import lombok.Getter;
 
 @Getter
 public class CreationResponse {
-    private String id;
+    private final String id;
 
     public CreationResponse(String id) {
         this.id = id;

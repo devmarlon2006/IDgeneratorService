@@ -1,7 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Controller.PostController;
 
 import com.devmarlon2006.IDgeneratorService.Services.Build;
-import com.devmarlon2006.IDgeneratorService.Services.model.CreationResponse;
+import com.devmarlon2006.IDgeneratorService.Services.model.Response.CreationResponse;
 import com.devmarlon2006.IDgeneratorService.Services.model.User.User;
 
 import jakarta.validation.Valid;

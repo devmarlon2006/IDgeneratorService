@@ -1,4 +1,4 @@
-package com.devmarlon2006.IDgeneratorService.Services.model.erroModel;
+package com.devmarlon2006.IDgeneratorService.Services.erroArea.erroModel;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

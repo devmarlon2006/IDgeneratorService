@@ -1,8 +1,6 @@
-package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
+package com.devmarlon2006.IDgeneratorService.Services.erroArea;
 
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @NoArgsConstructor(staticName = "private")
 public class ErroMethods {
@@ -42,10 +40,5 @@ public class ErroMethods {
     // Para parametros nulos.
     public static boolean NullParameter(String Parameter){
         return Parameter == null;
-    }
-    public static void validateTableSize(List<?> table, int expectedSize) {
-        if (table.size() < expectedSize) {
-            throw new IndexOutOfBoundsException("A lista deve ter pelo menos " + expectedSize + " elementos.");
-        }
     }
 }

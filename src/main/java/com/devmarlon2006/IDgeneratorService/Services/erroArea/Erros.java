@@ -1,4 +1,4 @@
-package com.devmarlon2006.IDgeneratorService.Services.ErroTable;
+package com.devmarlon2006.IDgeneratorService.Services.erroArea;
 
 public enum Erros{
     LIST_ERRO,

@@ -1,7 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services;
 
-import com.devmarlon2006.IDgeneratorService.Services.ErroTable.ErroMethods;
 import com.devmarlon2006.IDgeneratorService.Services.IdBy.By;
+import com.devmarlon2006.IDgeneratorService.Services.erroArea.CustomExeption.CustomsExeptions;
 
 import java.util.*;
 
@@ -21,7 +21,6 @@ public class Build {
 
             List <String> idcom = new ArrayList<>();
 
-            //ErroMethods.validateTableSize( idcom, 5 );
 
             idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
 
@@ -34,6 +33,9 @@ public class Build {
             idcom.add(By.ByALL(Username,State,Country,Age).orElse( "" )); // Bloco 5
 
             return String.join("", idcom);
+
+            CustomsExeptions.validateTableSize( idcom, 5 );
+
 
         }catch (IndexOutOfBoundsException | NullPointerException exception){
             return null;
