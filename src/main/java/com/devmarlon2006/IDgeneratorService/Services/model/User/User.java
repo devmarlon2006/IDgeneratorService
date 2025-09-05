@@ -1,10 +1,7 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.User;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -15,8 +12,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "app_user")
 public class User {
 
     @Id
@@ -41,13 +36,6 @@ public class User {
     @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres - (State)")
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O Campo pais não pode conter números ou caracteres especiais - State")
     private String stateBornCountry;
-
-    @Email(message = "Formato invalido - (E-mail)")
-    @NotBlank(message = "E-amil obrigatório - (E-mail)")
-    private String email;
-
-    @NotBlank(message = "Campo obrigatório")
-    private String password;
 
     public User(){}
 
