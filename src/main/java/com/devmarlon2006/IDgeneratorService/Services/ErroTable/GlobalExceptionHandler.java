@@ -75,7 +75,9 @@ public class GlobalExceptionHandler {
         if (errorMessage.contains( "Password" )) {
             return Erros.PASSWORD_ERRO.name();
         }
+
         return "0"; // Código de erro genérico
 
     }
+
 }
