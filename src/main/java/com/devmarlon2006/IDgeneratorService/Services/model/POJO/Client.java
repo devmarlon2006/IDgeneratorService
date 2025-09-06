@@ -1,4 +1,4 @@
-package com.devmarlon2006.IDgeneratorService.Services.model.User;
+package com.devmarlon2006.IDgeneratorService.Services.model.POJO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotBlank;
@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Client extends SuperclassModel{
 
 
 
@@ -39,23 +39,11 @@ public class User {
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O Campo pais não pode conter números ou caracteres especiais - State")
     private String stateBornCountry;
 
-    private String ID;
-
-    public void setID(String ID){
-        this.ID = (ID != null) ? ID : "";
-   }
-
+    private String id;
 
     @Override
-    @JsonIgnore
-    public String toString() {
-        return "InfoClassElements{" +
-                "ID='" + ID + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", bornCountry='" + bornCountry + '\'' +
-                ", stateBornCountry='" + stateBornCountry + '\'' +
-                '}';
+    public void setID(String ID) {
+        this.id = (ID != null) ? ID : "";
     }
 
 }

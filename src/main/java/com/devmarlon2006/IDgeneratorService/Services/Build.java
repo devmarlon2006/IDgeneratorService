@@ -1,5 +1,6 @@
 package com.devmarlon2006.IDgeneratorService.Services;
 
+import com.devmarlon2006.IDgeneratorService.Services.Config.GenerationPath;
 import com.devmarlon2006.IDgeneratorService.Services.IdBy.By;
 import com.devmarlon2006.IDgeneratorService.Services.erroArea.CustomExeption.CustomsExeptions;
 
@@ -11,7 +12,7 @@ public class Build {
     Status: Funcionando
      */
 
-    public static String idNameBuild(String Username, String State, String Country, String Age){
+    public static String idNameBuild(String Username, String State, String Country, String Age, GenerationPath GenerationMode){
 
         if (Username == null || State == null || Country == null || Age == null){
            return null;
