@@ -18,9 +18,24 @@ public class Build {
            return null;
         }
 
-        try{
+        List <String> idcom = new ArrayList<>();
 
-            List <String> idcom = new ArrayList<>();
+//        switch (GenerationMode){
+//            case PATH_1 -> {
+//                return By.ByName( Username ).orElse( "" );
+//            }
+//            case PATH_2 -> {
+//                return By.ByAge(Age).orElse( "" );
+//            }
+//            case PATH_3 -> {
+//                return By.ByState( State ).orElse( "" );
+//            }
+//            case PATH_4 -> {
+//                return By.ByCountry( Country ).orElse( "" );
+//            }
+//        }
+
+        try{
 
 
             idcom.add( By.ByName( Username ).orElse( "" ) ); // Bloco 1
