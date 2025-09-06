@@ -13,13 +13,13 @@ public class By {
 
     private By(){} // Private constructor to avoid instantiation
 
-    public static Optional <String> ByAge(String Age_B2){
+    public static Optional <String> ByAge(int Age_B2){
 
-        if (ErroMethods.NullParameter( Age_B2 )) {
+        if (ErroMethods.NullParameter( Integer.toString(Age_B2) )) {
             return Optional.empty();
         }
 
-        if (ErroMethods.AgeLimit(Integer.parseInt(Age_B2))) {
+        if (ErroMethods.AgeLimit(Age_B2)) {
             return Optional.empty();
         }
 
@@ -27,8 +27,9 @@ public class By {
 
 
 
-            Integer.parseInt( Age_B2 ); //Lançamento de exceção
-            int idade = Integer.parseInt( Age_B2 );
+            Integer.parseInt( Integer.toString( Age_B2 ) ); //Lançamento de exceção
+
+            int idade = Integer.parseInt( Integer.toString( Age_B2) );
 
             List<String> table = new ArrayList<>();
 
@@ -50,9 +51,9 @@ public class By {
     }
 
 
-    public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, String Age_B5){
+    public static Optional<String> ByALL(String Username_B5, String State_B5, String Country_B5, int Age_B5){
 
-        if(Username_B5 == null || State_B5 == null || Country_B5 == null || Age_B5 == null){
+        if(Username_B5 == null || State_B5 == null || Country_B5 == null || Age_B5 < 0 ){
             return Optional.empty();
         }
 
@@ -62,7 +63,7 @@ public class By {
 
 
             table.add(String.valueOf( randomElements.elementRadom15( Username_B5 ) ) );
-            table.add(String.valueOf( randomElements.elementRadom16( Integer.valueOf( Age_B5 ) ) ));
+            table.add(String.valueOf( randomElements.elementRadom16( Age_B5 ) ) );
             table.add(String.valueOf( randomElements.elementRadom17( State_B5 ) ) );
             table.add(randomElements.elementRadom18( Country_B5 ).toString().toUpperCase() );
 

@@ -11,12 +11,12 @@ public class HairCut extends SuperclassModel{
 
     private String id;
     private String Name;
-    private String Description;
+    private int aleatoryNumber;
+    private String price;
 
 
     @Override
     public void setID(String ID) {
         this.id = (ID != null) ? ID : "";
     }
-
 }

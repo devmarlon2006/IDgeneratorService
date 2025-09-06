@@ -50,7 +50,7 @@ public class CreationController{
     public CreationResponse<String> ControllerIDCreationHairCut(@RequestBody @Valid HairCut hairCut){
         try{
 
-            hairCut.setID( Build.idNameBuild( hairCut.getName(),"null","null","null", GenerationPath.PATH_3 ) );
+            hairCut.setID( Build.idNameBuild( hairCut.getName(),"null","null",hairCut.getAleatoryNumber(), GenerationPath.PATH_3 ) );
 
         }catch (NullPointerException exception){
             return new CreationResponse<>(null);
@@ -66,7 +66,7 @@ public class CreationController{
             Random random = new Random();
 
             barbeShop.setID(Build.idNameBuild( barbeShop.getName(),barbeShop.getState(),barbeShop.getCountry(),
-                    Integer.toString( random.nextInt()) ,GenerationPath.PATH_4 ));
+                    random.nextInt(),GenerationPath.PATH_4 ));
 
         } catch (NullPointerException exeption) {
             return new CreationResponse<>(null);

@@ -1,6 +1,5 @@
 package com.devmarlon2006.IDgeneratorService.Services.model.POJO;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -24,10 +23,7 @@ public class Client extends SuperclassModel{
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O campo nome não pode conter números ou caracteres especiais - (Username)")
     private String name;
 
-    @NotBlank(message = "A idade e Obrigatória - (Age)" )
-    @Size(min = 1, max = 3, message = "A idade deve ter entre 1 e 3 caracteres - (Age)")
-    @Pattern( regexp = "[0-9]+$", message = "A o campo Idade deve conter apenas números - (Age)")
-    private String age;
+    private int age;
 
     @NotBlank(message = "Campo obrigatório - (Country)")
     @Size(min = 3 , max = 100, message = "Campo deve ter entre 3 e 100 caracteres - (Country)")
