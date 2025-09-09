@@ -1,0 +1,19 @@
+package com.devmarlon2006.IDgeneratorService.service.erroArea;
+
+public enum Erros{
+    LIST_ERRO,
+    ID_ERRO,
+    NAME_ERRO,
+    AGE_ERRO,
+    COUNTRY_ERRO,
+    STATE_ERRO,
+    ALL_ERRO,
+    EMAIL_ERRO,
+    PASSWORD_ERRO,
+    USER_ERRO,
+    INTERNAL_SERVER_ERROR,
+    SAVE_DATA_ERRO,
+    DELETE_DATA_ERRO,
+    UPDATE_DATA_ERRO,
+    NOT_FOUND,
+}
