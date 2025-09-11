@@ -3,7 +3,6 @@ package com.devmarlon2006.IDgeneratorService.service.BuildArea;
 import com.devmarlon2006.IDgeneratorService.service.Config.GenerationPath;
 import com.devmarlon2006.IDgeneratorService.service.IdBy.By;
 
-import java.security.PublicKey;
 import java.util.*;
 
 public class Build {
@@ -42,11 +41,8 @@ public class Build {
     public static String Tree(String PARAMETER_1, String PARAMETER_2, String PARAMETER_3){
 
         List <String> ShortID = new ArrayList<>(); //12 characters
-
-        ShortID.add( By.ByName( PARAMETER_1 ).orElse( "" ) ); // Bloco 1
-
+        ShortID.add(By.ByName( PARAMETER_1 ).orElse( "" ) ); // Bloco 1
         ShortID.add(By.ByState( PARAMETER_2 ).orElse( "" )); // Bloco 2
-
         ShortID.add(By.ByCountry( PARAMETER_3 ).orElse( "" )); // Bloco 3
 
         return String.join("", ShortID);
