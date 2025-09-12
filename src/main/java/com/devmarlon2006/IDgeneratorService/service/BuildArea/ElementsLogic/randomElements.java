@@ -39,13 +39,11 @@ public class randomElements {
 
     public static String element2Con(int number, String name){
         int result;
-
         do{
             result = elementRa1() + elementRa2();
         }while (result > number );
 
         return Integer.toString( result );
-
     }
 
     public static String elementRandom3(String username){

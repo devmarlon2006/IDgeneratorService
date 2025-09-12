@@ -4,6 +4,9 @@ import com.devmarlon2006.IDgeneratorService.service.BuildArea.Build;
 import com.devmarlon2006.IDgeneratorService.service.Config.GenerationPath;
 import com.devmarlon2006.IDgeneratorService.service.model.POJO.Bytes;
 import com.devmarlon2006.IDgeneratorService.service.model.POJO.SSUID;
+import org.springframework.stereotype.Service;
+
+@Service
 public class ControllerForService<S> {
 
     public String Generation(S object , GenerationPath path){
