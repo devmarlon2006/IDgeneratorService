@@ -39,8 +39,6 @@ public class By {
             table.add( String.valueOf( randomElements.elementRandom6( idade ).toString().charAt( 0 ) ) );
             table.add( String.valueOf(randomElements.elementRandom7( idade )));
 
-            CustomsExeptions.validateTableSize( table, 4 );  //Lançamento de exceção - !!Corrigir!!
-
             return String.join("",table).describeConstable();
 
 
@@ -90,14 +88,11 @@ public class By {
 
         try{
 
-
             List<String> table = new ArrayList<>();
-
-
 
             table.add(randomElements.elementRandom11( Country ));
             table.add(randomElements.elementRadom12( Country ));
-            table.add( String.valueOf(randomElements.elementRadom13( Country)));
+            table.add(String.valueOf(randomElements.elementRadom13( Country)));
             table.add(String.valueOf( randomElements.elementRadom14( Country ) ));
 
             CustomsExeptions.validateTableSize( table, 4 ); // Lançameto de exceção - !!Corrigir!!

@@ -12,15 +12,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/Post")
 public class CreationController{
 
-    @PostMapping("/Create/id/Path3")
-    public CreationResponse<String> ControllerIDCreationClient(@RequestBody @Valid Bytes IDBytes){
+    private final ControllerForService<Bytes> controllerForService;
 
-        ControllerForService<Bytes> controllerForService = new ControllerForService<>();
+    public CreationController(ControllerForService<Bytes> controllerForService) {
+        this.controllerForService = controllerForService;
+    }
+
+    @PostMapping("/Create/id/{path}")
+    public CreationResponse<String> ControllerIDCreationClient(@RequestBody @Valid Bytes IDBytes, @PathVariable("path") GenerationPath path){
+
         final String GENERATED_ID;
 
         try{
 
-            GENERATED_ID = controllerForService.Generation(IDBytes, GenerationPath.PATH_2);
+            GENERATED_ID = controllerForService.Generation(IDBytes, path);
 
         }catch (NullPointerException exception) {
             return new CreationResponse<>( null );
