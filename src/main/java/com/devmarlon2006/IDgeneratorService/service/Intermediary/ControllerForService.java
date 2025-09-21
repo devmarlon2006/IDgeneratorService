@@ -19,7 +19,9 @@ public class ControllerForService<S> {
             return null;
         }
 
-        Bytes ID_BYTES = (Bytes) object;
+        if(!(object instanceof Bytes ID_BYTES)){
+            return null;
+        }
 
         SSUID<String> id = new SSUID<>(Build.idNameBuild(
                 ID_BYTES.getBYTE_1(),
